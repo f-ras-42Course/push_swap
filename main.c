@@ -6,21 +6,25 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 00:58:25 by fras          ########   odam.nl         */
+/*   Updated: 2023/04/27 01:41:44 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
+	t_list *data;
 	check_correct_formatting(argc, argv);
-	collect_input(argc, argv);
-	validate_input();
+	data = collect_input(argc, argv);
+	check_for_duplicates(data);
 	//14 12 12 "15 05 84" 1542 45
 }
 
 int	collect_input(int argc, char *argv[])
 {
+	t_list *new;
+	t_list *ptr;
+
 	
 }
