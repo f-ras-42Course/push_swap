@@ -6,9 +6,37 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 02:53:53 by fras          ########   odam.nl         */
+/*   Updated: 2023/04/27 02:58:20 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	collect_input(int argc, char *argv[])
+{
+	t_list	*data;
+	t_list	*ptr;
+	int		i;
+	int		j;
+
+	i = 1;
+	j = 0;
+	data = lst_add_new_value(ft_atoi(argv[i]));
+	while (i < argc)
+	{
+		while (argv[i][j])
+		{
+			while (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
+				j++;
+			if (argv[i][j] == ' ')
+			{
+				while (argv[i][j] == ' ')
+					j++;
+				ptr = data->next;
+				ptr = lst_add_new_value(ft_atoi(argv[i]));
+			}
+		}
+		i++;
+	}
+}
 
 t_list lst_add_new_value(int value)
 {
