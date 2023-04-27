@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.h                                        :+:    :+:            */
+/*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 02:56:33 by fras          ########   odam.nl         */
+/*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
+/*   Updated: 2023/04/27 02:53:53 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+t_list lst_add_new_value(int value)
+{
+	int		*insertion;
+	t_list	to_list;
 
-int		validate_formatting(int argc, char *argv[]);
-int		collect_input(int argc, char *argv[]);
-void	validate_no_duplicates(t_list *data);
-void	error_exit(void)
-t_list	lst_add_new_value(int value);
+	insertion = malloc(sizeof(int));
+	*insertion = value;
+	to_list = ft_lstnew(insertion);
+	return (to_list);
+}

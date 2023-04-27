@@ -6,11 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 02:40:14 by fras          ########   odam.nl         */
+/*   Updated: 2023/04/27 02:56:11 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		check_correct_formatting(int argc, char *argv[])
+int		validate_formatting(int argc, char *argv[])
 {
 	int i;
 	int j;
@@ -32,7 +32,7 @@ int		check_correct_formatting(int argc, char *argv[])
 	}
 }
 
-void	check_for_duplicates(t_list *data);
+void	validate_no_duplicates(t_list *data);
 {
 	int i;
 
