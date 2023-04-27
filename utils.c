@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 03:13:52 by fras          ########   odam.nl         */
+/*   Updated: 2023/04/27 10:51:56 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	collect_input(int argc, char *argv[])
 	j = 0;
 	data = lst_add_new_value(ft_atoi(argv[i]));
 	ptr = data;
-	while (i < argc)
+	while (i <= argc)
 	{
 		while (argv[i][j])
 		{
