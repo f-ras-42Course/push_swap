@@ -6,9 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 10:51:56 by fras          ########   odam.nl         */
+/*   Updated: 2023/04/27 11:33:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	collect_input(int argc, char *argv[])
 {
@@ -19,7 +21,7 @@ int	collect_input(int argc, char *argv[])
 
 	i = 1;
 	j = 0;
-	data = lst_add_new_value(ft_atoi(argv[i]));
+	data = lst_add_new_value(ft_atoi(argv[i]), data);
 	ptr = data;
 	while (i <= argc)
 	{
@@ -31,7 +33,7 @@ int	collect_input(int argc, char *argv[])
 			{
 				while (argv[i][j] == ' ')
 					j++;
-				ptr->next = lst_add_new_value(ft_atoi(argv[i]));
+				ptr->next = lst_add_new_value(ft_atoi(argv[i]), data);
 				ptr = ptr->next;
 			}
 		}
@@ -40,13 +42,21 @@ int	collect_input(int argc, char *argv[])
 	return (data);
 }
 
-t_list lst_add_new_value(int value)
+t_list *lst_add_new_value(int value, t_list *first_node)
 {
 	int		*insertion;
-	t_list	to_list;
+	t_list	*to_list;
 
 	insertion = malloc(sizeof(int));
+	if(!insertion)
+		lst_malloc_protect(first_node);
 	*insertion = value;
 	to_list = ft_lstnew(insertion);
 	return (to_list);
+}
+
+void	lst_malloc_protect(t_list *first_node)
+{
+	ft_lstclear(&first_node, &free);
+	error_exit();
 }
