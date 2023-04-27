@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/04/27 01:45:27 by fras          ########   odam.nl         */
+/*   Updated: 2023/04/27 02:36:43 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ int		check_correct_formatting(int argc, char *argv[])
 			error_exit;
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) || !argv[i][j] == ' ')
+			if (!ft_isdigit(argv[i][j]) || !argv[i][j] == ' ' \
+				|| !argv[i][j] == '-')
 				error_exit;
+			j++;
 		}
+		i++;
 	}
 }
 
