@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/04 05:37:15 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/04 05:47:32 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	validate_formatting(int argc, char *argv[])
 			if (digit_count > 10)
 				error_exit();
 			j++;
-			if (!singlenum_format)
+			if (!is_singlenum)
 				error_exit();
 			if (argv[i][j] == ' ')
 				digit_count = 0;
@@ -46,7 +46,7 @@ void	validate_formatting(int argc, char *argv[])
 	}
 }
 
-int	singlenum_format(char *ptr, int i)
+int	is_singlenum(char *ptr, int i)
 {
 	return (ft_isdigit(ptr[i]) \
 		|| ((ptr[i] == ' ') && ft_isdigit(ptr[i - 1])) \

@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/04 05:37:33 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/04 05:47:34 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,4 @@ void	error_exit(void);
 t_list	*lst_add_new_value(int value);
 void	lst_malloc_protect(t_list *first_node);
 int		int_only(long input);
-int		singlenum_format(char *ptr, int i);
+int		is_singlenum(char *ptr, int i);
