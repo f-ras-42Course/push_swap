@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/03 19:49:10 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/04 04:11:28 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@ t_list	*collect_input(int argc, char *argv[])
 	j = 0;
 	data = lst_add_new_value(int_only(fr_atol(argv[i])));
 	ptr = data;
-	while (i <= argc)
+	while (i < argc)
 	{
 		while (argv[i][j])
 		{
-			while (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
+			while (argv[i][j] == '-' || ft_isdigit(argv[i][j]))
 				j++;
 			if (argv[i][j] == ' ')
 			{
-				while (argv[i][j] == ' ')
-					j++;
-				ptr->next = lst_add_new_value(int_only(fr_atol(argv[i])));
+				j++;
+				ptr->next = lst_add_new_value(int_only(fr_atol(argv[i + j])));
 				ptr = ptr->next;
 			}
 		}
