@@ -24,7 +24,7 @@ OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 
 # Targets
-.PHONY: all clean fclean re directories updatelibs
+.PHONY: all clean fclean re directories libsupdate
 
 all: $(NAME)
 
@@ -38,7 +38,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(LIBRARIES):
 	$(MAKE) -C lib/$(basename $(notdir $@)) all
 
-updatelibs:
+libsupdate:
 	git submodule update --init
 
 # Directories
