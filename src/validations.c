@@ -6,35 +6,51 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/01 21:40:11 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/04 06:39:25 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		validate_formatting(int argc, char *argv[])
+void	error_exit(void)
 {
-	int i;
-	int j;
+	write(2, "Error\n", 7);
+	exit(EXIT_FAILURE);
+}
+
+void	validate_formatting(int argc, char *argv[])
+{
+	int	i;
+	int	j;
+	int	digit_count;
 
 	i = 1;
-	while (i <= argc)
+	while (i < argc)
 	{
 		j = 0;
-		if (!argv[i][j])
-			error_exit();
-		if (!ft_isdigit(argv[i][0]) || (argv[i][0] != '-'))
-			error_exit();
+		digit_count = 0;
 		while (argv[i][j])
 		{
-			j++;
-			if (!ft_isdigit(argv[i][j]) || argv[i][j] != ' ' \
-				|| (argv[i][j] != '-') \
-				|| (j != 0 && (argv[i][j] == '-') && (argv[i][j - 1] != ' ')))
+			digit_count += ft_isdigit(argv[i][j]);
+			if (digit_count > 10)
 				error_exit();
+			if (!is_valid_num_format(argv[i], j))
+				error_exit();
+			if (argv[i][j] == ' ')
+				digit_count = 0;
+			j++;
 		}
 		i++;
 	}
+}
+
+int	is_valid_num_format(char *ptr, int i)
+{
+	if (i == 0)
+		return (ft_isdigit(ptr[i]) || ((ptr[i] == '-') && ptr[i + 1]));
+	return (ft_isdigit(ptr[i]) \
+		|| ((ptr[i] == ' ') && ft_isdigit(ptr[i - 1]) && ptr[i + 1]) \
+		|| ((ptr[i] == '-') && (ptr[i - 1] == ' ') && ptr[i + 1]));
 }
 
 // void	validate_no_duplicates(t_list *data)
@@ -47,9 +63,3 @@ void		validate_formatting(int argc, char *argv[])
 // 		data[i]
 // 	}
 // }
-
-void	error_exit(void)
-{
-	write(2, "Error\n", 7);
-	exit(EXIT_FAILURE);
-}

@@ -24,7 +24,7 @@ OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 
 # Targets
-.PHONY: all clean fclean re directories updatelibs
+.PHONY: all clean fclean re directories libsupdate
 
 all: $(NAME)
 
