@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/03 22:37:05 by fras          ########   odam.nl          #
+#    Updated: 2023/05/07 18:42:09 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(LIBRARIES):
 	$(MAKE) -C lib/$(basename $(notdir $@)) all
 
-updatelibs:
+libsupdate:
 	git submodule update --init
 
 # Directories
