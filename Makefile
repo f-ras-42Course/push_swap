@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/07 18:42:09 by fras          ########   odam.nl          #
+#    Updated: 2023/05/09 16:01:04 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Werror -Wextra -Wall $(INCLUDE)
 INCLUDE = -I include $(EXT_INCLUDES)
 EXT_INCLUDES = $(foreach lib,$(LIBRARY_NAMES),-I lib/$(lib)/include)
-LIBRARY_NAMES = libft
+LIBRARY_NAMES = libft-extended
 LIBRARIES = $(foreach lib,$(LIBRARY_NAMES),lib/$(lib)/$(lib).a)
 SRC_DIR = src
 OBJ_DIR = obj
