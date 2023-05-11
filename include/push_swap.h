@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/04 06:10:46 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/11 16:31:48 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "libft.h"
+#include "ft_printf.h"
+#include "libft-extended.h"
 
 void	validate_formatting(int argc, char *argv[]);
 t_list	*collect_input(int argc, char *argv[]);
