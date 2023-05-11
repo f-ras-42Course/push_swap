@@ -6,17 +6,17 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/09 16:01:04 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 13:15:16 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall $(INCLUDE)
-INCLUDE = -I include $(EXT_INCLUDES)
-EXT_INCLUDES = $(foreach lib,$(LIBRARY_NAMES),-I lib/$(lib)/include)
-LIBRARY_NAMES = libft-extended
-LIBRARIES = $(foreach lib,$(LIBRARY_NAMES),lib/$(lib)/$(lib).a)
+INCLUDE = -I include -I $(EXTLIB_DIR)/include
+LIBRARIES = libftextended.a libft.a libftftprintf.a
+LIB_DIR = lib
+EXTLIB_DIR = $(LIB_DIR)/libft-extended
 SRC_DIR = src
 OBJ_DIR = obj
 SOURCES = $(shell find $(SRC_DIR) -type f -name "*.c")
@@ -36,10 +36,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 # Libraries
 $(LIBRARIES):
-	$(MAKE) -C lib/$(basename $(notdir $@)) all
+	$(MAKE) -C $(EXTLIB_DIR) $@
+	cp $(EXTLIB_DIR)/$@ .
 
 libsupdate:
-	git submodule update --init
+	git submodule update --remote --merge
 
 # Directories
 directories:
@@ -51,9 +52,7 @@ clean:
 	$(RM) -r obj
 
 fclean: clean
-	@for lib in $(LIBRARY_NAMES); do \
-		$(MAKE) -C lib/$$lib fclean; \
-	done
+	$(MAKE) -C $(EXTLIB_DIR) $@ 
 	$(RM) $(NAME)
 
 re: fclean all
