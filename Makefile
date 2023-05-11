@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/11 17:18:10 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 18:27:35 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,16 @@ LIBRARIES = libftextended.a libft.a libftprintf.a
 EXTLIB_DIR = $(LIB_DIR)/libft-extended
 LIBRARY_PATHS = $(foreach lib, $(LIBRARIES), $(LIB_DIR)/$(lib))
 
+ifdef DEBUG
+CFLAGS+=-g
+endif
+
+ifdef FSAN
+CFLAGS+=-fsanitize=address -g
+endif
 
 # Targets
-.PHONY: all clean fclean re directories libsinit libsupdate
+.PHONY: all clean fclean re directories libsinit libsupdate debug rebug fsan resan
 
 all: $(NAME)
 
@@ -57,6 +64,16 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+debug:
+	$(MAKE) DEBUG=1
+
+rebug: fclean debug
+
+fsan:
+	$(MAKE) FSAN=1
+
+resan: fclean fsan
 
 # Git
 libsinit:
