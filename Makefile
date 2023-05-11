@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/11 16:26:23 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 17:18:10 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ RM = rm -f
 LIB_DIR = lib
 LIBRARIES = libftextended.a libft.a libftprintf.a
 EXTLIB_DIR = $(LIB_DIR)/libft-extended
+LIBRARY_PATHS = $(foreach lib, $(LIBRARIES), $(LIB_DIR)/$(lib))
 
 
 # Targets
@@ -30,11 +31,8 @@ EXTLIB_DIR = $(LIB_DIR)/libft-extended
 
 all: $(NAME)
 
-echo:
-	echo $(LIBRARIES)
-
 $(NAME): $(LIBRARIES) directories $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $(OBJECTS) $(LIB_DIR)/$(LIBRARIES)
+	$(CC) $(CFLAGS) -o $@ $(OBJECTS) $(LIBRARY_PATHS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -o $@ -c $^	
@@ -55,7 +53,7 @@ clean:
 
 fclean: clean
 	$(MAKE) -C $(EXTLIB_DIR) $@
-	
+	$(RM) $(LIBRARY_PATHS)
 	$(RM) $(NAME)
 
 re: fclean all
