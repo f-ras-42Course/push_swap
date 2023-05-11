@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/11 13:15:16 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 15:14:15 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 
 # Targets
-.PHONY: all clean fclean re directories libsupdate
+.PHONY: all clean fclean re directories libsinit libsupdate libsmaster
 
 all: $(NAME)
 
@@ -38,9 +38,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(LIBRARIES):
 	$(MAKE) -C $(EXTLIB_DIR) $@
 	cp $(EXTLIB_DIR)/$@ .
-
-libsupdate:
-	git submodule update --remote --merge
 
 # Directories
 directories:
@@ -56,3 +53,10 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+# Git
+libsinit:
+	git submodule update --init --recursive
+
+libsupdate:
+	git submodule update --remote --merge
