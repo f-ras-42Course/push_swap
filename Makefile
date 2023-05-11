@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/11 16:24:56 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 16:26:23 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 # Libraries
 LIB_DIR = lib
-LIBRARIES = libftextended.a libft.a libftftprintf.a
+LIBRARIES = libftextended.a libft.a libftprintf.a
 EXTLIB_DIR = $(LIB_DIR)/libft-extended
 
 
