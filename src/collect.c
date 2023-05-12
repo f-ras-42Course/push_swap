@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/11 17:30:33 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/12 17:52:47 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,31 @@ t_list	*collect_input(int argc, char *argv[])
 	int		j;
 
 	i = 1;
-	j = 0;
-	data = lst_add_new_value(int_only(fr_atol(argv[i])));
 	ptr = data;
+	data = lst_add_new_value(int_only(fr_atol(argv[i])));
 	while (i < argc)
 	{
+		j = 0;
 		while (argv[i][j])
 		{
-			while (argv[i][j] == '-' || ft_isdigit(argv[i][j]))
-				j++;
 			if (argv[i][j] == ' ')
 			{
 				j++;
 				ptr->next = lst_add_new_value(int_only(fr_atol(argv[i + j])));
 				ptr = ptr->next;
 			}
+			j++;
 		}
+		ptr->next = lst_add_new_value(int_only(fr_atol(argv[i])));
+		ptr = ptr->next;
 		i++;
 	}
 	return (data);
+}
+
+t_list string_handler(t_list lst, char *str) // Decide more descriptive function name
+{
+	// While loop here
 }
 
 int	int_only(long input)
