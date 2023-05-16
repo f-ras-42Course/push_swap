@@ -6,22 +6,29 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/11 16:31:48 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/16 23:56:43 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdbool.h>
 #include "libft.h"
 #include "ft_printf.h"
 #include "libft-extended.h"
 
+typedef struct s_data
+{
+	struct s_data	*prev;				
+	int				input_value;
+	int				normalized_value;
+	struct s_data	*next;
+}	t_data;
+
 void	validate_formatting(int argc, char *argv[]);
-t_list	*collect_input(int argc, char *argv[]);
-void	validate_no_duplicates(t_list *data);
+t_data	*collect_input(int argc, char *argv[]);
+void	validate_no_duplicates(t_data *data);
 void	error_exit(void);
-t_list	*lst_add_new_value(int value);
-void	lst_malloc_protect(t_list *first_node);
 int		int_only(long input);
-int		is_valid_num_format(char *ptr, int i);
+bool	is_valid_num_format(char *ptr, int i);
