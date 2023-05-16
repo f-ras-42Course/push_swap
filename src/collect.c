@@ -6,22 +6,21 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/12 17:52:47 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/17 00:10:11 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*collect_input(int argc, char *argv[])
+t_data	*collect_data(int argc, char *argv[])
 {
-	t_list	*data;
-	t_list	*ptr;
+	t_data	*head;
+	t_data	*ptr;
 	int		i;
 	int		j;
 
 	i = 1;
-	ptr = data;
-	data = lst_add_new_value(int_only(fr_atol(argv[i])));
+	head = new_data_node(int_only(fr_atol(argv[i])));
 	while (i < argc)
 	{
 		j = 0;
@@ -30,39 +29,40 @@ t_list	*collect_input(int argc, char *argv[])
 			if (argv[i][j] == ' ')
 			{
 				j++;
-				ptr->next = lst_add_new_value(int_only(fr_atol(argv[i + j])));
+				ptr->next = int_only(fr_atol(argv[i + j]));
 				ptr = ptr->next;
 			}
 			j++;
 		}
-		ptr->next = lst_add_new_value(int_only(fr_atol(argv[i])));
+		ptr->next = int_only(fr_atol(argv[i]));
 		ptr = ptr->next;
 		i++;
 	}
 	return (data);
 }
 
-t_list string_handler(t_list lst, char *str) // Decide more descriptive function name
+t_data	lst_string_split_num(t_data lst, char *str) // Decide more descriptive function name
 {
 	// While loop here
 }
 
-int	int_only(long input)
+int		int_only(long input)
 {
 	if (input > INT_MAX | input < INT_MIN)
 		error_exit();
 	return ((int) input);
 }
 
-t_list *lst_add_new_value(int value)
+t_data	*new_data_node(int value)
 {
-	int		*insertion;
-	t_list	*to_list;
+	t_data	*new;
 
-	insertion = malloc(sizeof(int));
-	if(!insertion)
+	new = malloc(sizeof(t_data));
+	if (!new)
 		error_exit();
-	*insertion = value;
-	to_list = ft_lstnew(insertion);
-	return (to_list);
+	new->prev = new;
+	new->value_input = value;
+	new->index = -1;
+	new->next = new;
+	return (new);
 }
