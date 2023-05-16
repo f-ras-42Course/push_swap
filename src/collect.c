@@ -6,13 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 00:10:11 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 00:15:33 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_data	*collect_data(int argc, char *argv[])
+t_data	*collect_data(char *argv[])
 {
 	t_data	*head;
 	t_data	*ptr;
@@ -21,7 +21,7 @@ t_data	*collect_data(int argc, char *argv[])
 
 	i = 1;
 	head = new_data_node(int_only(fr_atol(argv[i])));
-	while (i < argc)
+	while (argv[i])
 	{
 		j = 0;
 		while (argv[i][j])
@@ -62,7 +62,7 @@ t_data	*new_data_node(int value)
 		error_exit();
 	new->prev = new;
 	new->value_input = value;
-	new->index = -1;
+	new->normalized_value = -1;
 	new->next = new;
 	return (new);
 }
