@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/16 23:56:43 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 00:10:26 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_data
 	struct s_data	*next;
 }	t_data;
 
-void	validate_formatting(int argc, char *argv[]);
-t_data	*collect_input(int argc, char *argv[]);
+void	validate_formatting(char *argv[]);
+t_data	*collect_input(char *argv[]);
 void	validate_no_duplicates(t_data *data);
 void	error_exit(void);
 int		int_only(long input);

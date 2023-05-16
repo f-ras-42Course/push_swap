@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/16 23:56:00 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 00:08:01 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	error_exit(void)
 	exit(EXIT_FAILURE);
 }
 
-void	validate_formatting(int argc, char *argv[])
+void	validate_formatting(char *argv[])
 {
 	int	i;
 	int	j;
 	int	digit_count;
 
 	i = 1;
-	while (i < argc)
+	while (argv[i])
 	{
 		j = 0;
 		digit_count = 0;
