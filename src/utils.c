@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   push_swap.c                                        :+:    :+:            */
+/*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: fras <fras@student.codam.nl>                 +#+                     */
+/*   By: ferryras <ferryras@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/26 23:35:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 04:16:04 by ferryras      ########   odam.nl         */
+/*   Created: 2023/05/17 04:07:43 by ferryras      #+#    #+#                 */
+/*   Updated: 2023/05/17 04:18:17 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	push_swap(t_data *head)
-// {
-// 	t_data **stackA;
-// 	t_data **stackB;
-// }
+size_t	circular_list_size(t_data *head)
+{
+	size_t		size;
+	t_data	*ptr;
+
+	size = 0;
+	ptr = head->next;
+	while (ptr != head)
+	{
+		ptr = ptr->next;
+		size++;
+	}
+	return(++size);
+}

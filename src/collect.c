@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 03:54:10 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 04:49:30 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,25 +79,30 @@ t_data	*add_data_node(t_data *prev, int input, t_data *next)
 	return (node);
 }
 
-// void	add_normalized_values(t_data *head)
-// {
-// 	int		lowest_value;
-// 	int		normalized;
-// 	t_data	*ptr;
+void	complete_normalized_values(t_data *head, size_t list_size)
+{
+	int		lowest_value;
+	int		normalized_value;
+	t_data	*ptr;
 
-// 	normalized = 0;
-// 	ptr = head;
-// 	lowest_value = ptr->input_value;
-// 	pos = pos->next;
-// 	while (pos != head)
-// 	{
-// 		while (ptr != head)
-// 		{
-// 			if (ptr->input_value < lowest_value && ptr->normalized_value == -1)
-// 				lowest_value = ptr->input_value;
-// 			ptr = ptr->next;
-// 		}
-// 		check_value = pos->input_value;
-// 		pos = pos->next;
-// 	}
-// }
+	normalized_value = 0;
+	while (normalized_value < (int)list_size)
+	{
+		ptr = head;
+		if (ptr->normalized_value == -1)
+			lowest_value = ptr->input_value;
+		ptr = ptr->next;
+		while (ptr != head)
+		{
+			if (ptr->input_value < lowest_value && ptr->normalized_value == -1)
+				lowest_value = ptr->input_value;
+			ptr = ptr->next;
+		}
+		ptr = head;
+		while (ptr->input_value != lowest_value)
+			ptr = ptr->next;
+		ptr->normalized_value = normalized_value;
+		normalized_value++;
+		lowest_value = INT_MAX;
+	}
+}
