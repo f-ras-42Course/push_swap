@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 07:25:36 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 07:26:28 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test(t_data *data);
 
-in	main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_data	*data;
 
