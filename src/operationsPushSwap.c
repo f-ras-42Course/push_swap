@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 10:34:46 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/17 17:51:57 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 void	swap_a (t_data **stackA)
 {
+	t_data *temp_ptr;
+
+	temp_ptr = *stackA->next;
+	temp_ptr->prev = *stackA->prev;
+	*stackA->prev = temp_ptr;
+	*stackA->next = temp_ptr->next;
+
+	// temp_ptr = *stackA;
+	// *stackA = stackA->next;
+	// stackA->next = temp_ptr;
 	ft_printf("sa\n");
 }
 
