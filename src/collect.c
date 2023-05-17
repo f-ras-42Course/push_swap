@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 04:49:30 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 04:59:51 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_data	*add_data_node(t_data *prev, int input, t_data *next)
 	return (node);
 }
 
-void	complete_normalized_values(t_data *head, size_t list_size)
+void	insert_normalized_values(t_data *head, size_t list_size)
 {
 	int		lowest_value;
 	int		normalized_value;

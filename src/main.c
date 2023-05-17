@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 04:52:10 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 05:00:05 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 	validate_formatting(argv);
 	data = collect_data(argv);
 	validate_no_duplicate_num(data);
-	complete_normalized_values(data, circular_list_size(data));
+	insert_normalized_values(data, circular_list_size(data));
 	// push_swap(data);
 	
 	test(data); // - temp for development
