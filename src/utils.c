@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: ferryras <ferryras@student.codam.nl>         +#+                     */
+/*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/05/17 04:07:43 by ferryras      #+#    #+#                 */
-/*   Updated: 2023/05/17 07:23:44 by ferryras      ########   odam.nl         */
+/*   Created: 2023/05/17 04:07:43 by fras          #+#    #+#                 */
+/*   Updated: 2023/05/17 10:14:11 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
