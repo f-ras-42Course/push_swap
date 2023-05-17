@@ -6,13 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 20:45:51 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/17 21:19:21 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a (t_data **stackA)
+void	swap_a(t_data **stackA)
 {
 	t_data	*first;
 	t_data	*second;
@@ -35,7 +35,7 @@ void	swap_a (t_data **stackA)
 	ft_printf("sa\n");
 }
 
-void	swap_b (t_data **stackB)
+void	swap_b(t_data **stackB)
 {
 	t_data	*first;
 	t_data	*second;
