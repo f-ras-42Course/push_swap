@@ -6,17 +6,17 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 05:00:05 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 07:25:36 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void test (t_data *data);
+void	test(t_data *data);
 
-int	main(int argc, char *argv[])
+in	main(int argc, char *argv[])
 {
-	t_data *data;
+	t_data	*data;
 
 	if (argc == 1)
 		error_exit();
@@ -32,7 +32,6 @@ int	main(int argc, char *argv[])
 
 
 // temporary tester:
-#include <stdio.h>
 void test (t_data *data)
 {
 	t_data *ptr;

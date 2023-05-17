@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 03:27:40 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 07:23:30 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ bool	is_valid_num_format(char *ptr, int i)
 		|| ((ptr[i] == '-') && (ptr[i - 1] == ' ') && ptr[i + 1]));
 }
 
-int		int_only(long input)
+int	int_only(long input)
 {
 	if (input > INT_MAX | input < INT_MIN)
 		error_exit();

@@ -6,17 +6,20 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 04:59:58 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 07:20:54 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <stdbool.h>
-#include "libft.h"
-#include "ft_printf.h"
-#include "libft-extended.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stdbool.h>
+# include "libft.h"
+# include "ft_printf.h"
+# include "libft-extended.h"
 
 typedef struct s_data
 {
@@ -38,3 +41,5 @@ t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head);
 void	insert_normalized_values(t_data *head, size_t size);
 size_t	circular_list_size(t_data *head);
 void	push_swap(t_data *head);
+
+#endif

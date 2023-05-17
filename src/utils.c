@@ -6,7 +6,7 @@
 /*   By: ferryras <ferryras@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 04:07:43 by ferryras      #+#    #+#                 */
-/*   Updated: 2023/05/17 05:11:09 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 07:23:44 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ size_t	circular_list_size(t_data *head)
 		ptr = ptr->next;
 		size++;
 	}
-	return(++size);
+	return (++size);
 }
