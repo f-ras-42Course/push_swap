@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 19:10:06 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/17 20:50:23 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ void	test(t_data *data);
 void	push_swap(t_data *start_input)
 {
 	t_data	*stackA;
-	// t_data	*stackB;
+	t_data	*stackB;
 	size_t	list_size;
 
 	stackA = start_input;
+	stackB = NULL;
 	list_size = circular_list_size(start_input);
 	test(stackA);
 	printf("\n\nSWAPPERDE SWAP\n\n");
-	swap_a(&stackA);
+	swap_swap_ab(&stackA, &stackB);
 	test(stackA);
 // 	if (list_size <= 3)
 // 		xx1sort;
