@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 10:14:35 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/17 10:21:48 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ t_data	*add_data_node(t_data *prev, int input, t_data *next);
 t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head);
 void	insert_normalized_values(t_data *head, size_t size);
 size_t	circular_list_size(t_data *head);
-void	push_swap(t_data *head);
+void	push_swap(t_data *start_input);
+void	swap_a (t_data **stackA)
+void	swap_b (t_data **stackB)
 
 #endif
