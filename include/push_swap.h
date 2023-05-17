@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 10:21:48 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/17 10:37:28 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,16 @@ t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head);
 void	insert_normalized_values(t_data *head, size_t size);
 size_t	circular_list_size(t_data *head);
 void	push_swap(t_data *start_input);
-void	swap_a (t_data **stackA)
-void	swap_b (t_data **stackB)
+void	swap_a (t_data **stackA);
+void	swap_b (t_data **stackB);
+void	swap_swap_ab(t_data **stackA, t_data **stackB);
+void	push_a (t_data **stackA, t_data **stackB);
+void	push_b (t_data **stackA, t_data **stackB);
+void	rotate_a (t_data **stackA);
+void	rotate_b (t_data **stackB);
+void	rotate_rotate_ab(t_data **stackA, t_data **stackB);
+void	rev_rotate_a (t_data **stackA);
+void	rev_rotate_b (t_data **stackB);
+void	rev_rotate_rotate_ab(t_data **stackA, t_data **stackB);
 
 #endif
