@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 00:15:33 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 02:13:28 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,32 @@ t_data	*collect_data(char *argv[])
 	int		j;
 
 	i = 1;
-	head = new_data_node(int_only(fr_atol(argv[i])));
+	head = new_data_list(int_only(fr_atol(argv[i])));
+	ptr = head;
 	while (argv[i])
 	{
 		j = 0;
+		if (i != 1)
+			ptr = add_data_node(ptr, int_only(fr_atol(argv[i])), head);
 		while (argv[i][j])
 		{
 			if (argv[i][j] == ' ')
 			{
 				j++;
-				ptr->next = int_only(fr_atol(argv[i + j]));
-				ptr = ptr->next;
+				ptr = add_data_node(ptr, int_only(fr_atol(argv[i] + j)), head);
 			}
 			j++;
 		}
-		ptr->next = int_only(fr_atol(argv[i]));
-		ptr = ptr->next;
 		i++;
 	}
-	return (data);
+	head->prev = ptr;
+	return (head);
 }
 
-t_data	lst_string_split_num(t_data lst, char *str) // Decide more descriptive function name
-{
-	// While loop here
-}
+// void	split_num_from_string(t_data *prev, char *str, t_data *next)
+// {
+
+// }
 
 int		int_only(long input)
 {
@@ -53,16 +54,31 @@ int		int_only(long input)
 	return ((int) input);
 }
 
-t_data	*new_data_node(int value)
+t_data	*new_data_list(int input)
 {
 	t_data	*new;
 
 	new = malloc(sizeof(t_data));
 	if (!new)
 		error_exit();
-	new->prev = new;
-	new->value_input = value;
+	new->prev = NULL;
+	new->input_value = input;
 	new->normalized_value = -1;
 	new->next = new;
 	return (new);
+}
+
+t_data	*add_data_node(t_data *prev, int input, t_data *next)
+{
+	t_data	*node;
+
+	node = malloc(sizeof(t_data));
+	if (!node)
+		error_exit();
+	prev->next = node;
+	node->prev = prev;
+	node->input_value = input;
+	node->normalized_value = -1;
+	node->next = next;
+	return (node);
 }
