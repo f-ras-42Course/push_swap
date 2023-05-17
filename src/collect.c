@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 02:27:48 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 03:05:50 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,6 @@ t_data	*split_num_from_strings(t_data *ptr, char *str, t_data *head)
 	return (ptr);
 }
 
-int		int_only(long input)
-{
-	if (input > INT_MAX | input < INT_MIN)
-		error_exit();
-	return ((int) input);
-}
 
 t_data	*new_data_list(int input)
 {
