@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 03:15:32 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 03:27:24 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char *argv[])
 		error_exit();
 	validate_formatting(argv);
 	data = collect_data(argv);
-	validate_no_duplicates(data);
-
+	validate_no_duplicate_num(data);
+	add_normalized_values(data);
 	// ptr = data;
 	// printf("[%d] = %d, ", i++, ptr->input_value);
 	// ptr = ptr->next;

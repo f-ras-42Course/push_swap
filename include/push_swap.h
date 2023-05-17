@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 02:27:18 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 03:27:34 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_data
 }	t_data;
 
 void	validate_formatting(char *argv[]);
-void	validate_no_duplicates(t_data *data);
+void	validate_no_duplicate_num(t_data *data);
 void	error_exit(void);
 int		int_only(long input);
 bool	is_valid_num_format(char *ptr, int i);

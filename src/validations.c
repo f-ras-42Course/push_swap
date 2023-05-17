@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 03:05:14 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 03:27:40 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		int_only(long input)
 	return ((int) input);
 }
 
-void	validate_no_duplicates(t_data *head)
+void	validate_no_duplicate_num(t_data *head)
 {
 	int		check_value;
 	t_data	*ptr;
