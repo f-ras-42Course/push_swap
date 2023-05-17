@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/17 02:13:28 by ferryras      ########   odam.nl         */
+/*   Updated: 2023/05/17 02:27:48 by ferryras      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,37 @@ t_data	*collect_data(char *argv[])
 	t_data	*head;
 	t_data	*ptr;
 	int		i;
-	int		j;
 
 	i = 1;
 	head = new_data_list(int_only(fr_atol(argv[i])));
 	ptr = head;
 	while (argv[i])
 	{
-		j = 0;
 		if (i != 1)
 			ptr = add_data_node(ptr, int_only(fr_atol(argv[i])), head);
-		while (argv[i][j])
-		{
-			if (argv[i][j] == ' ')
-			{
-				j++;
-				ptr = add_data_node(ptr, int_only(fr_atol(argv[i] + j)), head);
-			}
-			j++;
-		}
+		ptr = split_num_from_strings(ptr, argv[i], head);
 		i++;
 	}
 	head->prev = ptr;
 	return (head);
 }
 
-// void	split_num_from_string(t_data *prev, char *str, t_data *next)
-// {
+t_data	*split_num_from_strings(t_data *ptr, char *str, t_data *head)
+{
+	int i;
 
-// }
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == ' ')
+		{
+			i++;
+			ptr = add_data_node(ptr, int_only(fr_atol(str + i)), head);
+		}
+		i++;
+	}
+	return (ptr);
+}
 
 int		int_only(long input)
 {
