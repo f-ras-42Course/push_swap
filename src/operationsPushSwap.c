@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/24 20:21:42 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/24 20:25:13 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,25 +104,25 @@ void	push_b (t_data **stackA, t_data **stackB)
 	if (!*stackA)
 		return;
 	headA = *stackA;
-	if (headA->next != headA)
+	if (headA->next == headA)
+		*stackA = NULL;
+	else
 	{
 		headA->next->prev = headA->prev;
 		headA->prev->next = headA->next;
 		*stackA = headA->next;
 	}
+	if (!*stackB)
+	{
+		headA->prev = headA;
+		headA->next = headA;
+	}
 	else
-		*stackA = NULL;
-	if (*stackB)
 	{
 		headA->prev = (*stackB)->prev;
 		headA->next = *stackB;
 		(*stackB)->prev->next = headA;
 		(*stackB)->prev = headA;
-	}
-	else
-	{
-		headA->prev = headA;
-		headA->next = headA;
 	}
 	*stackB = headA;
 	ft_printf("pb\n");
