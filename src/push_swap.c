@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/19 18:47:49 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/21 16:24:55 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	push_swap(t_data *start_input)
 {
 	t_data	*stackA;
 	t_data	*stackB;
-	size_t	list_size;
+	// size_t	list_size;
 
 	stackA = start_input;
 	stackB = NULL;
-	list_size = circular_list_size(start_input);
+	// list_size = circular_list_size(start_input);
 	test(stackA);
 	test(stackB);
 	printf("\n\nPUSHERDEPUSH B\n\n");
