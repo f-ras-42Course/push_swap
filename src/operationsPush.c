@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 14:42:11 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/25 16:09:45 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/25 16:17:43 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,36 +38,4 @@ void	push_b(t_data **stackA,	t_data **stackB)
 	else
 		add_head_to_stack(stackB, &old_a_head);
 	ft_printf("pb\n");
-}
-
-t_data	*remove_head_from_stack(t_data **stack)
-{
-	t_data *head;
-
-	head = *stack;
-	*stack = (*stack)->next;
-	if (head == *stack)
-		*stack = NULL;
-	else
-	{
-		(*stack)->prev = head->prev;
-		(*stack)->prev->next = *stack;
-	}
-	return (head);
-}
-
-void	initialize_stack_from_head(t_data **stack, t_data *head)
-{
-	head->prev = head;
-	head->next = head;
-	*stack = head;
-}
-
-void	add_head_to_stack(t_data **stack, t_data **head)
-{
-	(*head)->prev = (*stack)->prev;
-	(*head)->next = *stack;
-	(*stack)->prev->next = *head;
-	(*stack)->prev = *head;
-	*stack = *head;
 }
