@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/25 10:14:52 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/25 12:58:19 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ void	swap_a(t_data **stackA)
 	t_data	*tail;
 
 	if (!*stackA || (*stackA)->next == *stackA)
-		return;
+		return ;
 	first = *stackA;
 	second = first->next;
 	third = second->next;
 	tail = first->prev;
 	first->prev = second;
-    first->next = third;
-    second->prev = tail;
-    second->next = first;
-    tail->next = second;
-    third->prev = first;
+	first->next = third;
+	second->prev = tail;
+	second->next = first;
+	tail->next = second;
+	third->prev = first;
 	*stackA = second;
 	ft_printf("sa\n");
 }
@@ -43,17 +43,17 @@ void	swap_b(t_data **stackB)
 	t_data	*tail;
 
 	if (!*stackB || (*stackB)->next == *stackB)
-		return;
+		return ;
 	first = *stackB;
 	second = first->next;
 	third = second->next;
 	tail = first->prev;
 	first->prev = second;
-    first->next = third;
-    second->prev = tail;
-    second->next = first;
-    tail->next = second;
-    third->prev = first;
+	first->next = third;
+	second->prev = tail;
+	second->next = first;
+	tail->next = second;
+	third->prev = first;
 	*stackB = second;
 	ft_printf("sa\n");
 }
@@ -67,63 +67,62 @@ void	swap_swap_ab(t_data **stackA, t_data **stackB)
 
 void	push_a(t_data **stackA,	t_data **stackB)
 {
-	t_data	*OLDheadB;
+	t_data	*old_b_head;
 
 	if (!*stackB)
-		return;
-	OLDheadB = *stackB;
+		return ;
+	old_b_head = *stackB;
 	*stackB = (*stackB)->next;
-	if (*stackB == OLDheadB)
+	if (*stackB == old_b_head)
 		*stackB = NULL;
 	else
 	{
-		(*stackB)->prev = OLDheadB->prev;
+		(*stackB)->prev = old_b_head->prev;
 		(*stackB)->prev->next = *stackB;
 	}
 	if (!*stackA)
 	{
-		OLDheadB->prev = OLDheadB;
-		OLDheadB->next = OLDheadB;
+		old_b_head->prev = old_b_head;
+		old_b_head->next = old_b_head;
 	}
 	else
 	{
-		OLDheadB->prev = (*stackA)->prev;
-		OLDheadB->next = *stackA;
-		(*stackA)->prev->next = OLDheadB;
-		(*stackA)->prev = OLDheadB;
+		old_b_head->prev = (*stackA)->prev;
+		old_b_head->next = *stackA;
+		(*stackA)->prev->next = old_b_head;
+		(*stackA)->prev = old_b_head;
 	}
-	*stackA = OLDheadB;
+	*stackA = old_b_head;
 	ft_printf("pa\n");
 }
 
-
 void	push_b(t_data **stackA,	t_data **stackB)
 {
-	t_data	*OLDheadA;
+	t_data	*old_a_head;
 
 	if (!*stackA)
-		return;
-	OLDheadA = *stackA;
+		return ;
+	old_a_head = *stackA;
 	*stackA = (*stackA)->next;
-	if (*stackA == OLDheadA)
+	if (*stackA == old_a_head)
 		*stackA = NULL;
 	else
 	{
-		(*stackA)->prev = OLDheadA->prev;
+		(*stackA)->prev = old_a_head->prev;
 		(*stackA)->prev->next = *stackA;
 	}
 	if (!*stackB)
 	{
-		OLDheadA->prev = OLDheadA;
-		OLDheadA->next = OLDheadA;
+		old_a_head->prev = old_a_head;
+		old_a_head->next = old_a_head;
 	}
 	else
 	{
-		OLDheadA->prev = (*stackB)->prev;
-		OLDheadA->next = *stackB;
-		(*stackB)->prev->next = OLDheadA;
-		(*stackB)->prev = OLDheadA;
+		old_a_head->prev = (*stackB)->prev;
+		old_a_head->next = *stackB;
+		(*stackB)->prev->next = old_a_head;
+		(*stackB)->prev = old_a_head;
 	}
-	*stackB = OLDheadA;
+	*stackB = old_a_head;
 	ft_printf("pb\n");
 }

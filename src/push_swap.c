@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/25 10:15:46 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/25 13:00:02 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,60 +16,60 @@ void	test(t_data *data);
 
 void	push_swap(t_data *start_input)
 {
-	t_data	*stackA;
-	t_data	*stackB;
+	t_data	*stack_a;
+	t_data	*stack_b;
 	// size_t	list_size;
 
-	stackA = start_input;
-	stackB = NULL;
+	stack_a = start_input;
+	stack_b = NULL;
 	// list_size = circular_list_size(start_input);
-	test(stackA);
-	test(stackB);
+	test(stack_a);
+	test(stack_b);
 	printf("\n\nPUSHERDEPUSH B\n\n");
-	push_b(&stackA, &stackB);
+	push_b(&stack_a, &stack_b);
 	printf("\n\nSTACK A:\n\n");
-	test(stackA);
+	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
-	test(stackB);
+	test(stack_b);
 	printf("\n\nPUSHERDEPUSH B\n\n");
-	push_b(&stackA, &stackB);
+	push_b(&stack_a, &stack_b);
 	printf("\n\nSTACK A:\n\n");
-	test(stackA);
+	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
-	test(stackB);
+	test(stack_b);
 	printf("\n\nPUSHERDEPUSH B\n\n");
-	push_b(&stackA, &stackB);
+	push_b(&stack_a, &stack_b);
 	printf("\n\nSTACK A:\n\n");
-	test(stackA);
+	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
-	test(stackB);
+	test(stack_b);
 	printf("\n\n\n");
 	printf("\n\nPUSHERDEPUSH A\n\n");
-	push_a(&stackA, &stackB);
+	push_a(&stack_a, &stack_b);
 	printf("\n\nSTACK A:\n\n");
-	test(stackA);
+	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
-	test(stackB);
+	test(stack_b);
 	printf("\n\nPUSHERDEPUSH A\n\n");
-	push_a(&stackA, &stackB);
+	push_a(&stack_a, &stack_b);
 	printf("\n\nSTACK A:\n\n");
-	test(stackA);
+	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
-	test(stackB);
+	test(stack_b);
 	printf("\n\nPUSHERDEPUSH A\n\n");
-	push_a(&stackA, &stackB);
+	push_a(&stack_a, &stack_b);
 	printf("\n\nSTACK A:\n\n");
-	test(stackA);
+	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
-	test(stackB);
+	test(stack_b);
 	// printf("\n\nPUSHERDEPUSH A\n\n");
-	// push_a(&stackA, &stackB);
-	// test(stackA);
-	// test(stackB);
+	// push_a(&stack_a, &stack_b);
+	// test(stack_a);
+	// test(stack_b);
 	// printf("\n\nPUSHERDEPUSH A\n\n");
-	// push_a(&stackA, &stackB);
-	// test(stackA);
-	// test(stackB);
+	// push_a(&stack_a, &stack_b);
+	// test(stack_a);
+	// test(stack_b);
 // 	if (list_size <= 3)
 // 		xx1sort;
 // 	else if (list_size <= 5)
