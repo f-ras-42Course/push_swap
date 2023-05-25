@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/24 20:25:13 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/25 10:14:52 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,65 +65,65 @@ void	swap_swap_ab(t_data **stackA, t_data **stackB)
 	ft_printf("ss\n");
 }
 
-void	push_a (t_data **stackA, t_data **stackB)
+void	push_a(t_data **stackA,	t_data **stackB)
 {
-	t_data	*headB;
+	t_data	*OLDheadB;
 
 	if (!*stackB)
 		return;
-	headB = *stackB;
-	if (headB->next != headB)
-	{
-		headB->next->prev = headB->prev;
-		if (headB->next->next == headB)
-			headB->next->next = headB->next;
-		*stackB = headB->next;
-	}
-	else
+	OLDheadB = *stackB;
+	*stackB = (*stackB)->next;
+	if (*stackB == OLDheadB)
 		*stackB = NULL;
-	if (*stackA)
+	else
 	{
-		headB->prev = (*stackA)->prev;
-		headB->next = *stackA;
-		(*stackA)->prev->next = headB;
-		(*stackA)->prev = headB;
+		(*stackB)->prev = OLDheadB->prev;
+		(*stackB)->prev->next = *stackB;
+	}
+	if (!*stackA)
+	{
+		OLDheadB->prev = OLDheadB;
+		OLDheadB->next = OLDheadB;
 	}
 	else
 	{
-		headB->prev = headB;
-		headB->next = headB;
+		OLDheadB->prev = (*stackA)->prev;
+		OLDheadB->next = *stackA;
+		(*stackA)->prev->next = OLDheadB;
+		(*stackA)->prev = OLDheadB;
 	}
-	*stackA = headB;
+	*stackA = OLDheadB;
 	ft_printf("pa\n");
 }
 
-void	push_b (t_data **stackA, t_data **stackB)
+
+void	push_b(t_data **stackA,	t_data **stackB)
 {
-	t_data	*headA;
+	t_data	*OLDheadA;
 
 	if (!*stackA)
 		return;
-	headA = *stackA;
-	if (headA->next == headA)
+	OLDheadA = *stackA;
+	*stackA = (*stackA)->next;
+	if (*stackA == OLDheadA)
 		*stackA = NULL;
 	else
 	{
-		headA->next->prev = headA->prev;
-		headA->prev->next = headA->next;
-		*stackA = headA->next;
+		(*stackA)->prev = OLDheadA->prev;
+		(*stackA)->prev->next = *stackA;
 	}
 	if (!*stackB)
 	{
-		headA->prev = headA;
-		headA->next = headA;
+		OLDheadA->prev = OLDheadA;
+		OLDheadA->next = OLDheadA;
 	}
 	else
 	{
-		headA->prev = (*stackB)->prev;
-		headA->next = *stackB;
-		(*stackB)->prev->next = headA;
-		(*stackB)->prev = headA;
+		OLDheadA->prev = (*stackB)->prev;
+		OLDheadA->next = *stackB;
+		(*stackB)->prev->next = OLDheadA;
+		(*stackB)->prev = OLDheadA;
 	}
-	*stackB = headA;
+	*stackB = OLDheadA;
 	ft_printf("pb\n");
 }

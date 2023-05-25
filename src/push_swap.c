@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/21 16:24:55 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/25 10:15:46 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,40 @@ void	push_swap(t_data *start_input)
 	test(stackB);
 	printf("\n\nPUSHERDEPUSH B\n\n");
 	push_b(&stackA, &stackB);
+	printf("\n\nSTACK A:\n\n");
 	test(stackA);
+	printf("\n\nSTACK B:\n\n");
+	test(stackB);
+	printf("\n\nPUSHERDEPUSH B\n\n");
+	push_b(&stackA, &stackB);
+	printf("\n\nSTACK A:\n\n");
+	test(stackA);
+	printf("\n\nSTACK B:\n\n");
+	test(stackB);
+	printf("\n\nPUSHERDEPUSH B\n\n");
+	push_b(&stackA, &stackB);
+	printf("\n\nSTACK A:\n\n");
+	test(stackA);
+	printf("\n\nSTACK B:\n\n");
+	test(stackB);
+	printf("\n\n\n");
+	printf("\n\nPUSHERDEPUSH A\n\n");
+	push_a(&stackA, &stackB);
+	printf("\n\nSTACK A:\n\n");
+	test(stackA);
+	printf("\n\nSTACK B:\n\n");
+	test(stackB);
+	printf("\n\nPUSHERDEPUSH A\n\n");
+	push_a(&stackA, &stackB);
+	printf("\n\nSTACK A:\n\n");
+	test(stackA);
+	printf("\n\nSTACK B:\n\n");
+	test(stackB);
+	printf("\n\nPUSHERDEPUSH A\n\n");
+	push_a(&stackA, &stackB);
+	printf("\n\nSTACK A:\n\n");
+	test(stackA);
+	printf("\n\nSTACK B:\n\n");
 	test(stackB);
 	// printf("\n\nPUSHERDEPUSH A\n\n");
 	// push_a(&stackA, &stackB);
