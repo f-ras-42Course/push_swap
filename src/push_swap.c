@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 01:56:12 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 01:57:05 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,3 @@ void	push_swap(t_data *start_input)
 // 		RadixSort;
 // }
 }
-
-void
