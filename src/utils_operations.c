@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 16:14:10 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/25 16:16:08 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/27 16:39:50 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,7 @@ void	add_head_to_stack(t_data **stack, t_data **head)
 	(*stack)->prev = *head;
 	*stack = *head;
 }
+
+// void	rotate_stack(t_data **head, t_data **tail)
+// {
+// }

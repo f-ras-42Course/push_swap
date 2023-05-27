@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/25 13:00:02 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/27 16:58:39 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,12 @@ void	push_swap(t_data *start_input)
 	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
 	test(stack_b);
-	// printf("\n\nPUSHERDEPUSH A\n\n");
-	// push_a(&stack_a, &stack_b);
-	// test(stack_a);
-	// test(stack_b);
-	// printf("\n\nPUSHERDEPUSH A\n\n");
-	// push_a(&stack_a, &stack_b);
-	// test(stack_a);
-	// test(stack_b);
+	printf("\n\nRotate A\n\n");
+	rotate_a(&stack_a);
+	printf("\n\nSTACK A:\n\n");
+	test(stack_a);
+	printf("\n\nSTACK B:\n\n");
+	test(stack_b);
 // 	if (list_size <= 3)
 // 		xx1sort;
 // 	else if (list_size <= 5)
