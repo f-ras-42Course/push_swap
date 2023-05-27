@@ -6,13 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 14:42:11 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/27 22:37:04 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 01:43:42 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_data **stackA,	t_data **stackB)
+t_cmd	push_a(t_data **stackA,	t_data **stackB)
 {
 	t_data	*old_b_head;
 
@@ -23,10 +23,10 @@ void	push_a(t_data **stackA,	t_data **stackB)
 		initialize_stack_from_head(stackA, old_b_head);
 	else
 		add_head_to_stack(stackA, old_b_head);
-	ft_printf("pa\n");
+	return(pa);
 }
 
-void	push_b(t_data **stackA,	t_data **stackB)
+t_cmd	push_b(t_data **stackA,	t_data **stackB)
 {
 	t_data	*old_a_head;
 
@@ -37,5 +37,5 @@ void	push_b(t_data **stackA,	t_data **stackB)
 		initialize_stack_from_head(stackB, old_a_head);
 	else
 		add_head_to_stack(stackB, old_a_head);
-	ft_printf("pb\n");
+	return(pb);
 }
