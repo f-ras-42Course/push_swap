@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 01:51:25 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 01:56:12 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,11 @@ void	test(t_data *data);
 
 void	push_swap(t_data *start_input)
 {
-	t_stacks *stacks;
-
-	stacks->stackA = start_input;
-	stacks->stackB = NULL;
-
-	operation_call(stacks, pa);
 	t_data	*stack_a;
 	t_data	*stack_b;
 
 	stack_a = start_input;
 	stack_b = NULL;
-
-	t_stacks *data;
-	operation_call(pa);
 	test(stack_a);
 	test(stack_b);
 	printf("\n\nPUSHERDEPUSH B\n\n");
