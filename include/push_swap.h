@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/27 20:47:01 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/27 20:48:12 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@ typedef struct s_data
 	int				normalized_value;
 	struct s_data	*next;
 }	t_data;
-
-typedef enum e_command {sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr}\
-	t_command;
-
-typedef void (*t_generic_fp)(void);
 
 void	validate_formatting(char *argv[]);
 void	validate_no_duplicate_num(t_data *data);
