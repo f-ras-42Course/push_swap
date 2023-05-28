@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 14:42:11 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 02:00:30 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 02:13:54 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_cmd	push_a(t_data **stackA,	t_data **stackB)
 	if (!*stackA)
 		initialize_stack_from_head(stackA, old_b_head);
 	else
-		add_head_to_stack(stackA, old_b_head);
+		add_head_to_stack(stackA, &old_b_head);
 	return(pa);
 }
 
@@ -36,6 +36,6 @@ t_cmd	push_b(t_data **stackA,	t_data **stackB)
 	if (!*stackB)
 		initialize_stack_from_head(stackB, old_a_head);
 	else
-		add_head_to_stack(stackB, old_a_head);
+		add_head_to_stack(stackB, &old_a_head);
 	return(pb);
 }
