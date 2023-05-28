@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 01:57:05 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 02:21:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	push_swap(t_data *start_input)
 	printf("\n\nSWAPPERDESWAP B\n\n");
 	print_ops(swap_b(&stack_b));
 	printf("\n\nRotate A\n\n");
-	rotate_a(&stack_a);
+	print_ops(rotate_a(&stack_a));
 	printf("\n\nSTACK A:\n\n");
 	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
