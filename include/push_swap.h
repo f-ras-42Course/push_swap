@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 02:19:48 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 02:33:21 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_cmd	rotate_rotate_ab(t_data **stackA, t_data **stackB);
 t_cmd	rev_rotate_a(t_data **stackA);
 t_cmd	rev_rotate_b(t_data **stackB);
 t_cmd	rev_rotate_rotate_ab(t_data **stackA, t_data **stackB);
+void	swap(t_data **stack);
 t_data	*remove_head_from_stack(t_data **stack);
 void	initialize_stack_from_head(t_data **stack, t_data *head);
 void	add_head_to_stack(t_data **stack, t_data **head);
