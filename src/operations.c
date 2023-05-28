@@ -6,13 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/27 19:05:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 01:51:37 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 02:13:03 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_ops(t_command operation)
+void	print_ops(t_cmd operation)
 {
 	if (operation == sa)
 		ft_printf("sa\n");
