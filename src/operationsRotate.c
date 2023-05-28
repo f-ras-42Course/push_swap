@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:31:59 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 02:25:02 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/28 02:29:49 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ t_cmd	rotate_rotate_ab(t_data **stackA, t_data **stackB)
 	if ((!*stackB || (*stackB)->next == *stackB) 
 		&& (!*stackA || (*stackA)->next == *stackA))
 		return (none);
+	rotate_a(stackA);
+	rotate_b(stackB);
 	return(rr);
 }
