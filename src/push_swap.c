@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 02:21:41 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/29 21:11:33 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,12 @@ void	push_swap(t_data *start_input)
 	test(stack_a);
 	printf("\n\nSTACK B:\n\n");
 	test(stack_b);
+	print_ops(rev_rotate_a(&stack_a));
+	printf("\n\nSTACK A:\n\n");
+	test(stack_a);
+	printf("\n\nSTACK B:\n\n");
+	test(stack_b);
+	redix_sort(&stack_a, &stack_b);
 // 	if (list_size <= 3)
 // 		xx1sort;
 // 	else if (list_size <= 5)
