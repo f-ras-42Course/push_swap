@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/31 13:36:01 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/31 19:47:07 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,25 @@
 
 void	redix_sort(t_data **stackA, t_data **stackB)
 {
-	int	highest_value;
-
+	int		highest_bit_length;
+	t_data	*ptr;
+	ptr = (*stackA)->next;
 	*stackB = NULL;
-	highest_value = get_highest_value(*stackA);
-	printf("\n\n\n\n\nHIGHEST VALUE = %d\n\n\n\n\n\n", highest_value);
+	highest_bit_length = get_highest_bit_length(*stackA);
+	while (highest_bit_length)
+	{
+		while (*stackA != ptr)
+		if ((*stackA)->normalized_value &1)
+		//insert and check bit-wise operators.
+	}
+	printf("\n\n\n\n\nHIGHEST BIT-LENGTH = %d\n\n\n\n\n\n", highest_bit_length);
 }
 
-int	get_highest_value(t_data *stackA)
+int	get_highest_bit_length(t_data *stackA)
 {
 	t_data	*ptr;
 	int		highest_value;
+	int		bit_length;
 
 	highest_value = stackA->normalized_value;
 	ptr = stackA->next;
@@ -34,5 +42,11 @@ int	get_highest_value(t_data *stackA)
 			highest_value = ptr->normalized_value;
 		ptr = ptr->next;
 	}
-	return (highest_value);
+	bit_length = 0;
+	while (highest_value)
+	{
+		highest_value /= 2;
+		bit_length++;
+	}
+	return (bit_length);
 }

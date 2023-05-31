@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/29 21:08:49 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/31 19:45:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void	initialize_stack_from_head(t_data **stack, t_data *head);
 void	add_head_to_stack(t_data **stack, t_data **head);
 void	print_ops(t_cmd operation);
 void	redix_sort (t_data **stackA, t_data **stackB);
-int		get_highest_value(t_data *stackA);
+int		get_highest_bit_length(t_data *stackA);
 
 #endif
