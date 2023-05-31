@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   utils_operations.c                                 :+:    :+:            */
+/*   operations_utils.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 16:14:10 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/27 19:06:15 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/31 17:46:39 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_data	*remove_head_from_stack(t_data **stack)
 {
-	t_data *head;
+	t_data	*head;
 
 	head = *stack;
 	*stack = (*stack)->next;

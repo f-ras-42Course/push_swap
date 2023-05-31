@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 02:32:55 by fras          ########   odam.nl         */
+/*   Updated: 2023/05/31 17:48:39 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,34 @@ t_cmd	swap_a(t_data **stackA)
 	if (!*stackA || (*stackA)->next == *stackA)
 		return (none);
 	swap(stackA);
-	return(sa);
+	return (sa);
 }
 
 t_cmd	swap_b(t_data **stackB)
 {
-
 	if (!*stackB || (*stackB)->next == *stackB)
 		return (none);
 	swap(stackB);
-	return(sb);
+	return (sb);
 }
 
 t_cmd	swap_swap_ab(t_data **stackA, t_data **stackB)
 {
-	if ((!*stackB || (*stackB)->next == *stackB) 
+	if ((!*stackB || (*stackB)->next == *stackB)
 		&& (!*stackA || (*stackA)->next == *stackA))
 		return (none);
-	swap_a(stackA);
-	swap_b(stackB);
-	return(ss);
+	swap(stackA);
+	swap(stackB);
+	return (ss);
 }
 
-void swap(t_data **stack)
+void	swap(t_data **stack)
 {
 	t_data	*first;
 	t_data	*second;
 	t_data	*third;
 	t_data	*tail;
+
 	first = *stack;
 	second = first->next;
 	third = second->next;
