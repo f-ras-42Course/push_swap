@@ -6,13 +6,15 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/29 21:11:33 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/05 22:42:58 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	test(t_data *data);
+void	test2(t_data *data);
+
 
 void	push_swap(t_data *start_input)
 {
@@ -23,57 +25,10 @@ void	push_swap(t_data *start_input)
 	stack_b = NULL;
 	test(stack_a);
 	test(stack_b);
-	printf("\n\nPUSHERDEPUSH B\n\n");
-	print_ops(push_b(&stack_a, &stack_b));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	printf("\n\nPUSHERDEPUSH B\n\n");
-	print_ops(push_b(&stack_a, &stack_b));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	printf("\n\nPUSHERDEPUSH B\n\n");
-	print_ops(push_b(&stack_a, &stack_b));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	printf("\n\n\n");
-	printf("\n\nPUSHERDEPUSH A\n\n");
-	print_ops(push_a(&stack_a, &stack_b));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	printf("\n\nPUSHERDEPUSH A\n\n");
-	print_ops(push_a(&stack_a, &stack_b));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	printf("\n\nPUSHERDEPUSH A\n\n");
-	print_ops(push_a(&stack_a, &stack_b));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	printf("\n\nSWAPPERDESWAP B\n\n");
-	print_ops(swap_b(&stack_b));
-	printf("\n\nRotate A\n\n");
-	print_ops(rotate_a(&stack_a));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
-	print_ops(rev_rotate_a(&stack_a));
-	printf("\n\nSTACK A:\n\n");
-	test(stack_a);
-	printf("\n\nSTACK B:\n\n");
-	test(stack_b);
+	printf("\n\nREDIX_Sort\n\n");
 	redix_sort(&stack_a, &stack_b);
+	test(stack_a);
+	test(stack_b);
 // 	if (list_size <= 3)
 // 		xx1sort;
 // 	else if (list_size <= 5)

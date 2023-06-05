@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/05 13:54:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/05 22:47:29 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,42 @@
 void	redix_sort(t_data **stackA, t_data **stackB)
 {
 	int		bit_length;
-	t_data	*ptr;
+	size_t	stack_size;
+	size_t	i;
 	
-	ptr = *stackA;
-	*stackB = NULL;
-	bit_length = get_highest_bit_length(*stackA) - 1;
-	print_ops(push_b(stackA, stackB));
+	i = 0;
+	bit_length = get_highest_bit_length(*stackA);
+	stack_size = circular_list_size(*stackA);
 	while (bit_length)
 	{
-		if (!ptr->normalized_value &1)
+		if (!((*stackA)->normalized_value &1))
 		{
-			print_ops(push_b(ptr, stackB));
-			(*stackB)->normalized_value >> 1;
+			(*stackA)->normalized_value = (*stackA)->normalized_value >> 1;
+			print_ops(push_b(stackA, stackB));
 		}
 		else
-			ptr->normalized_value >> 1;
-		ptr = ptr->next;
-		if (ptr == *stackA)
 		{
-			push_all_stackB_to_stackA(stackA, stackB);
+			(*stackA)->normalized_value = (*stackA)->normalized_value >> 1;
+			print_ops(rotate_a(stackA));
+		}
+		i++;
+		if (i == stack_size)
+		{
+			push_all_to_stackA(stackA, stackB);
+			i = 0;
 			bit_length--;
 		}
 	}
 	printf("\n\n\n\n\nHIGHEST BIT-LENGTH = %d\n\n\n\n\n\n", bit_length);
 }
 
-t_data	*push_all_stackB_to_stackA(t_data **stackA, t_data **stackB)
+void	push_all_to_stackA(t_data **stackA, t_data **stackB)
 {
-	t_data *tailB;
+	t_cmd command;
 
-	tailB = (*stackB)->prev;
-	while((stackB != tailB))
-	{
-		print_ops(push_a(*stackA, *stackB));
-		*stackB = (*stackB)->next;
-	}
-	print_ops(push_a(*stackA, *stackB));
+	command = print_ops(push_a(stackA, stackB));
+	while(command != none)
+		command = print_ops(push_a(stackA, stackB));
 }
 
 int	get_highest_bit_length(t_data *stackA)

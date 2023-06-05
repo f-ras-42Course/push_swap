@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   operations.c                                       :+:    :+:            */
+/*   operations_printer.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/27 19:05:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/28 02:13:03 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/05 22:29:26 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_ops(t_cmd operation)
+t_cmd	print_ops(t_cmd operation)
 {
 	if (operation == sa)
 		ft_printf("sa\n");
@@ -36,4 +36,5 @@ void	print_ops(t_cmd operation)
 		ft_printf("rrb\n");
 	if (operation == rrr)
 		ft_printf("rrr\n");
+	return(operation);
 }
