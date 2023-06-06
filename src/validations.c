@@ -55,7 +55,7 @@ bool	is_valid_num_format(char *ptr, int i)
 
 int	int_only(long input)
 {
-	if (input > INT_MAX | input < INT_MIN)
+	if (input > INT_MAX || input < INT_MIN)
 		error_exit();
 	return ((int) input);
 }
