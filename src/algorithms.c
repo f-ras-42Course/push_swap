@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   algorithm.c                                        :+:    :+:            */
+/*   algorithms.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/05 22:47:29 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/06 16:13:34 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	small_sort(t_data **stackA, size_t data_nodes)
+{
+	if (data_nodes == 1)
+		return ;
+	if(data_nodes == 2 && (*stackA)->normalized_value == 1)
+		print_ops(swap_a(stackA));
+}
 
 void	redix_sort(t_data **stackA, t_data **stackB)
 {
