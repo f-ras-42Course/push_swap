@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 20:31:59 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 22:49:22 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,10 @@ void	ferry_sort(t_data **stackA, t_data **stackB, size_t data_size)
 		else
 			while ((*stackA)->normalized_value != lowest_num)
 				print_ops(rev_rotate_a(stackA));
-		test2(*stackA);
 		print_ops(push_b(stackA, stackB));
-		printf("\n\nnum search: %d\n\n", lowest_num);
 		lowest_num++;
 	}
-	small_sort(stackA, 3, 1);
+	small_sort(stackA, 3, lowest_num);
 	push_all_to_stackA(stackA, stackB);
 }
 
