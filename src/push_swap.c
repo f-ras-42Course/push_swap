@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 14:50:30 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 15:37:59 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@ void	test(t_data *data);
 void	test2(t_data *data);
 
 
-void	push_swap(t_data *start_input)
+void	push_swap(t_data *start_input, size_t data_size)
 {
 	t_data	*stack_a;
 	t_data	*stack_b;
-	size_t	data_size;
 
-	data_size = circular_list_size(start_input);
 	stack_a = start_input;
 	stack_b = NULL;
 	test(stack_a);
 	test(stack_b);
 	if (data_size <= 3)
-		small_sort(stack_a, data_size, 0);
+		small_sort(&stack_a, data_size, 0);
 	else if (data_size <= 6)
-		ferry_sort (stack_a, stack_b, data_size);
+		ferry_sort (&stack_a, &stack_b, data_size);
 	else
 		redix_sort(&stack_a, &stack_b, data_size);
 	test(stack_a);
