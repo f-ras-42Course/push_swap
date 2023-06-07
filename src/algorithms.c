@@ -6,13 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 08:06:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 08:20:33 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	small_sort(t_data **stackA, size_t data_size)
+void	small_sort(t_data **stackA, size_t data_size, int lowest_num)
 {
 	t_data *secondA;
 
@@ -45,6 +45,36 @@ void	ferry_sort(t_data **stackA, t_data **stackB, size_t data_size)
 {
 
 }
+
+void	small_sort_reverse(t_data **stackB, size_t data_size, int highest_num)
+{
+	t_data *secondB;
+
+	secondB = (*stackB)->next;
+	if (data_size == 2 && (*stackB)->normalized_value != highest_num)
+		print_ops(swap_a(stackB));
+	if (data_size == 3)
+	{
+		if ((*stackB)->normalized_value == 0 && secondA->normalized_value == 2)
+		{
+			print_ops(rotate_a(stackB));
+			print_ops(swap_a(stackB));
+			print_ops(rev_rotate_a(stackB));
+		}
+		if ((*stackB)->normalized_value == 1 && secondA->normalized_value == 0)
+			print_ops(swap_a(stackB));
+		if ((*stackB)->normalized_value == 1 && secondA->normalized_value == 2)
+			print_ops(rev_rotate_a(stackB));
+		if ((*stackB)->normalized_value == 2 && secondA->normalized_value == 0)
+			print_ops(rotate_a(stackB));
+		if ((*stackB)->normalized_value == 2 && secondA->normalized_value == 1)
+		{
+			print_ops(swap_a(stackB));
+			print_ops(rev_rotate_a(stackB));
+		}
+	}
+}
+
 
 void	redix_sort(t_data **stackA, t_data **stackB, size_t data_size)
 {
