@@ -6,20 +6,17 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 19:49:37 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 23:42:28 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "libft.h"
-# include "ft_printf.h"
-# include "libft-extended.h"
 
 typedef struct s_data
 {
@@ -68,5 +65,7 @@ void	redix_sort (t_data **stackA, t_data **stackB, size_t data_size);
 int		locate_low_normal_or_rev(t_data **stackA, int num);
 int		get_highest_bit_length(t_data *stackA);
 void	push_all_to_stackA(t_data **stackA, t_data **stackB);
+bool	fr_isdigit(int c);
+long	fr_atol(const char *str);
 
 #endif

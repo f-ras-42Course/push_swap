@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   operations_printer.c                               :+:    :+:            */
+/*   printer.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/27 19:05:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/05 22:29:26 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 23:37:20 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 t_cmd	print_ops(t_cmd operation)
 {
 	if (operation == sa)
-		ft_printf("sa\n");
+		write(1, "sa\n", 3);
 	if (operation == sb)
-		ft_printf("sb\n");
+		write(1, "sb\n", 3);
 	if (operation == ss)
-		ft_printf("ss\n");
+		write(1, "ss\n", 3);
 	if (operation == pa)
-		ft_printf("pa\n");
+		write(1, "pa\n", 3);
 	if (operation == pb)
-		ft_printf("pb\n");
+		write(1, "pb\n", 3);
 	if (operation == ra)
-		ft_printf("ra\n");
+		write(1, "ra\n", 3);
 	if (operation == rb)
-		ft_printf("rb\n");
+		write(1, "rb\n", 3);
 	if (operation == rr)
-		ft_printf("rr\n");
+		write(1, "rr\n", 3);
 	if (operation == rra)
-		ft_printf("rra\n");
+		write(1, "rra\n", 4);
 	if (operation == rrb)
-		ft_printf("rrb\n");
+		write(1, "rrb\n", 4);
 	if (operation == rrr)
-		ft_printf("rrr\n");
+		write(1, "rrr\n", 4);
 	return(operation);
 }
