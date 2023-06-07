@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 19:48:45 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 19:49:37 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ void	add_head_to_stack(t_data **stack, t_data **head);
 t_cmd	print_ops(t_cmd operation);
 void	small_sort(t_data **stackA, size_t data_size, int lowest);
 void	ferry_sort(t_data **stackA, t_data **stackB, size_t data_size);
-void	ferry_sort_sz4(t_data **stackA, t_data **stackB);
-int		locate_low_normal_or_rev(t_data **stackA, int num);
 void	redix_sort (t_data **stackA, t_data **stackB, size_t data_size);
+int		locate_low_normal_or_rev(t_data **stackA, int num);
 int		get_highest_bit_length(t_data *stackA);
 void	push_all_to_stackA(t_data **stackA, t_data **stackB);
 

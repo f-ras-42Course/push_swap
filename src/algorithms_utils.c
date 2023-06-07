@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/06 15:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 15:45:22 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 19:50:13 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,27 @@ int	get_highest_bit_length(t_data *stack)
 		bit_length++;
 	}
 	return (bit_length);
+}
+
+int	locate_low_normal_or_rev(t_data **stackA, int num)
+{
+	t_data	*ptr;
+	int		next_check;
+	int		prev_check;
+	
+	next_check = 0;
+	prev_check = 0;
+	ptr = *stackA;
+	while (ptr->normalized_value != num && ++next_check)
+		ptr = ptr->next;
+	ptr = (*stackA)->prev;
+	while (ptr->normalized_value != num && ++prev_check)
+	{
+		printf("check prev\n");
+		ptr = ptr->prev;
+	}
+	printf("\n\nnext value: %d || prev value: %d\n\n", next_check, prev_check);
+	if (next_check <= (prev_check + 1))
+		return (1);
+	return (0);
 }
