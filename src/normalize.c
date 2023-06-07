@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/05 23:08:23 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/05 23:25:49 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 00:30:44 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	insert_normalized_values(t_data *head, size_t list_size)
 		lowest_value = get_lowest_value(head);
 		insert_lowest_norm_value(lowest_value, normalize_value, head);
 		normalize_value++;
-		lowest_value = INT_MAX;
 	}
 }
 
@@ -33,6 +32,7 @@ int	get_lowest_value(t_data *head)
 	t_data *ptr;
 
 	ptr = head;
+	lowest_value = INT_MAX;
 	if (ptr->normalized_value == -1)
 			lowest_value = ptr->input_value;
 	ptr = ptr->next;
