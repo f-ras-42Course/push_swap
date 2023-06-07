@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 07:54:23 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 08:09:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	push_swap(t_data *start_input)
 	stack_b = NULL;
 	test(stack_a);
 	test(stack_b);
-	
-	redix_sort(&stack_a, &stack_b);
+	redix_sort(&stack_a, &stack_b, data_size);
 	test(stack_a);
 	test(stack_b);
 // 	if (list_size <= 3)
