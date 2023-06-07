@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/05 22:42:58 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 07:54:23 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ void	push_swap(t_data *start_input)
 {
 	t_data	*stack_a;
 	t_data	*stack_b;
+	size_t	data_size;
 
+	data_size = circular_list_size(start_input);
 	stack_a = start_input;
 	stack_b = NULL;
 	test(stack_a);
 	test(stack_b);
-	printf("\n\nREDIX_Sort\n\n");
+	
 	redix_sort(&stack_a, &stack_b);
 	test(stack_a);
 	test(stack_b);
