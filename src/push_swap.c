@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 22:56:32 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 23:14:47 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	push_swap(t_data *start_input, size_t data_size)
 	test(stack_b);
 	if (data_size <= 3)
 		small_sort(&stack_a, data_size, 0);
-	else if (data_size <= 6)
+	else if (data_size <= 73)
 		ferry_sort (&stack_a, &stack_b, data_size);
 	else
 		redix_sort(&stack_a, &stack_b, data_size);
