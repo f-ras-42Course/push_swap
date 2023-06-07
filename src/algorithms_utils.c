@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/06 15:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 19:50:13 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 20:32:38 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ int	locate_low_normal_or_rev(t_data **stackA, int num)
 		ptr = ptr->next;
 	ptr = (*stackA)->prev;
 	while (ptr->normalized_value != num && ++prev_check)
-	{
-		printf("check prev\n");
 		ptr = ptr->prev;
-	}
 	printf("\n\nnext value: %d || prev value: %d\n\n", next_check, prev_check);
 	if (next_check <= (prev_check + 1))
 		return (1);
