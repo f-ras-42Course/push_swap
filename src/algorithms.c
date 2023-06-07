@@ -6,44 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 08:02:54 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 08:06:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	small_sort(t_data **stackA, size_t data_size)
-{
-	t_data *secondA;
-
-	secondA = (*stackA)->next;
-	if (data_size == 2 && (*stackA)->normalized_value == 1)
-		print_ops(swap_a(stackA));
-	if (data_size == 3)
-	{
-		if ((*stackA)->normalized_value == 0 && secondA->normalized_value == 2)
-		{
-			print_ops(rotate_a(stackA));
-			print_ops(swap_a(stackA));
-			print_ops(rev_rotate_a(stackA));
-		}
-		if ((*stackA)->normalized_value == 1 && secondA->normalized_value == 0)
-			print_ops(swap_a(stackA));
-		if ((*stackA)->normalized_value == 1 && secondA->normalized_value == 2)
-			print_ops(rev_rotate_a(stackA));
-		if ((*stackA)->normalized_value == 2 && secondA->normalized_value == 0)
-			print_ops(rotate_a(stackA));
-		if ((*stackA)->normalized_value == 2 && secondA->normalized_value == 1)
-		{
-			print_ops(swap_a(stackA));
-			print_ops(rev_rotate_a(stackA));
-		}
-	}
-}
-
-
-
-void	small_sort_reverse(t_data **stack, size_t data_size)
 {
 	t_data *secondA;
 
