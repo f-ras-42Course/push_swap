@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/06 15:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 08:06:03 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 08:09:40 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ int	get_highest_bit_length(t_data *stackA)
 	return (bit_length);
 }
 
-void	small_sort_reverse(t_data **stack, size_t data_size)
+void	small_sort_reverse(t_data **stack, size_t data_size, int highest_num)
 {
 	t_data *secondA;
 
 	secondA = (*stackA)->next;
-	if (data_size == 2 && (*stackA)->normalized_value == 1)
+	if (data_size == 2 && (*stackA)->normalized_value == highest_num)
 		print_ops(swap_a(stackA));
 	if (data_size == 3)
 	{
