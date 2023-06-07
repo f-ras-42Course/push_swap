@@ -6,13 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/06 20:10:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 23:17:15 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	test(t_data *data);
 
 int	main(int argc, char *argv[])
 {

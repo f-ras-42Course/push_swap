@@ -6,13 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 22:49:22 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/07 23:17:04 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void test2 (t_data *data);
 
 void	small_sort(t_data **stackA, size_t data_size, int lowest)
 {
