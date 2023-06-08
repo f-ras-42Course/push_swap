@@ -6,13 +6,13 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 17:47:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 19:12:14 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_next_line(void)
+char	*get_next_line_stdin(void)
 {
 	static char	leftover[BUFFER_SIZE];
 	char		*storage;
