@@ -6,17 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 23:40:56 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 15:53:58 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error_exit(void)
-{
-	write(2, "Error\n", 7);
-	exit(EXIT_FAILURE);
-}
 
 void	validate_formatting(char *argv[])
 {
