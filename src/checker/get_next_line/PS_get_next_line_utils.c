@@ -6,11 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:41 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 17:24:12 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 20:07:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ps_get_next_line.h"
 
 size_t	find_newline(char *search, size_t size)
 {

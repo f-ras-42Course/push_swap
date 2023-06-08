@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_next_line.h                                    :+:    :+:            */
+/*   PS_get_next_line.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:46:02 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 19:38:53 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 20:11:03 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef PS_GET_NEXT_LINE_H
+# define PS_GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 # 	define BUFFER_SIZE 128
@@ -29,5 +29,7 @@ size_t	find_newline(char *search, size_t size);
 char	*save_alloc_string(char *source, size_t size);
 char	*save_string_realloc(char *source, char *dest, size_t size);
 size_t	sizeof_stringcopy(char *dest, char *source);
+void	read_failure_exit(void);
+void	malloc_failure_exit(void);
 
 #endif
