@@ -6,14 +6,12 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 00:46:16 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 16:00:27 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 18:08:02 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
-
-# define BUFFER_SIZE 4
 
 # include "push_swap.h"
 

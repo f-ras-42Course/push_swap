@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 23:42:28 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 18:06:26 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_data
 
 void	validate_formatting(char *argv[]);
 void	validate_no_duplicate_num(t_data *data);
-void	error_exit(void);
 int		int_only(long input);
 bool	is_valid_num_format(char *ptr, int i);
 t_data	*collect_data(char *argv[]);
@@ -67,5 +66,7 @@ int		get_highest_bit_length(t_data *stackA);
 void	push_all_to_stackA(t_data **stackA, t_data **stackB);
 bool	fr_isdigit(int c);
 long	fr_atol(const char *str);
+void	error_exit(void);
+void	malloc_failure_exit(void);
 
 #endif
