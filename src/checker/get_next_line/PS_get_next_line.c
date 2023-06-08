@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 16:08:01 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 17:47:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,14 @@ char	*get_next_line(void)
 	size_t		newline_pos;
 
 	len = retrieve_leftover(&storage, leftover);
-	if (!storage)
-		return (NULL);
 	newline_pos = find_newline(storage, len);
 	if (newline_pos)
 		return (extract_line(storage, leftover, newline_pos));
 	len = buffering(&storage, len);
-	if (!storage)
-		return (NULL);
 	newline_pos = find_newline(storage, len);
 	if (newline_pos)
 		return (extract_line(storage, leftover, newline_pos));
-	if (!*storage)
+	if (*storage == '\0')
 	{
 		free(storage);
 		return (NULL);
@@ -47,8 +43,6 @@ size_t	retrieve_leftover(char **dest, char *leftover)
 	while (leftover[leftover_size])
 		leftover_size++;
 	*dest = save_alloc_string(leftover, leftover_size);
-	if (!*dest)
-		return (0);
 	*leftover = '\0';
 	return (leftover_size);
 }
@@ -68,17 +62,11 @@ size_t	buffering(char **stored_read, size_t old_size)
 		size += bytes_read;
 		newline = find_newline(buffer, BUFFER_SIZE);
 		*stored_read = save_string_realloc(buffer, *stored_read, size);
-		if (!*stored_read)
-			return (0);
 		if (!newline)
 			bytes_read = read(STDIN_FILENO, buffer, BUFFER_SIZE);
 	}
 	if (bytes_read == -1)
-	{
-		free(*stored_read);
-		*stored_read = NULL;
-		return (0);
-	}
+		read_failure_exit();
 	return (size);
 }
 
