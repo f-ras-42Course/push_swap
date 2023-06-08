@@ -15,7 +15,7 @@
 
 void	error_exit(void)
 {
-	write(2, "Error\n", 7);
+	write(STDERR_FILENO, "Error\n", 7);
 	exit(EXIT_FAILURE);
 }
 
