@@ -6,11 +6,12 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 20:07:35 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 21:49:59 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_get_next_line.h"
+#include <stdio.h>
 
 char	*get_next_line_stdin(void)
 {

@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   checker.h                                          :+:    :+:            */
+/*   temp_test.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/06/08 00:46:16 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 20:12:09 by fras          ########   odam.nl         */
+/*   Created: 2023/06/08 19:45:11 by fras          #+#    #+#                 */
+/*   Updated: 2023/06/08 20:14:37 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "checker.h"
+#include <stdio.h>
 
-# include "push_swap.h"
+void test(t_data *data)
+{
+	t_data *ptr;
+	int i;
 
-void	checker(t_data *data_input);
-char	*get_next_line_stdin(void);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	sort_from_stdin_commands(t_data **stackA, t_data **stackB);
-t_cmd	get_operations(char *str);
-void	make_operations(t_cmd command, t_data **stackA, t_data **stackB);
-
-#endif
+	if(!data)
+	{
+		printf("\n---TEST: NO DATA FOUND---\n");
+		return;
+	}
+ 	i = 0;
+	ptr = data;
+ 	printf("[HEAD %d] = %d\n", i++, ptr->normalized_value);
+ 	ptr = ptr->next;
+ 	while (ptr != data)
+ 	{
+ 		printf("[%d] = %d\n", i++, ptr->normalized_value);
+ 		ptr = ptr->next;
+ 	}
+	printf("\n\n");
+}

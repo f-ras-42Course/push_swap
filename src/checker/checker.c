@@ -6,34 +6,47 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 01:21:18 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 19:41:09 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 21:50:45 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	checker(t_data *data_input, size_t data_size)
+void test(t_data *data);
+#include <stdio.h>
+
+void	checker(t_data *data_input)
 {
 	t_data *stack_a;
 	t_data *stack_b;
 
 	stack_a = data_input;
 	stack_b = NULL;
-	sort_from_stdin_commands(&stack_a, &stack_b)
+	printf("INITIAL DATA SETUP (STACK A):\n\n");
+	test(stack_a);
+	sort_from_stdin_commands(&stack_a, &stack_b);
+	printf("EOF reached\n");
 }
 
 void	sort_from_stdin_commands(t_data **stackA, t_data **stackB)
 {
 	char *line;
 
-	while(line)
+	printf("Time to start sorting...\n\n");
+	while (1)
 	{
 		line = get_next_line_stdin();
+		make_operations(get_operations(line), stackA, stackB);
+		printf("Used the following command: %s\n\n", line);
+		printf("Result StackA:\n");
+		test(*stackA);
+		printf("Result StackB:\n");
+		test(*stackB);
 		if(!line)
 			break;
-		make_operations(get_operations(line));
 		free(line);
 	}
+	free(line);
 }
 
 t_cmd	get_operations(char *str)
@@ -66,27 +79,27 @@ t_cmd	get_operations(char *str)
 void	make_operations(t_cmd command, t_data **stackA, t_data **stackB)
 {
 	if (command == none)
-		error_exit():
+		error_exit();
 	if (command == sa)
-		swap_a(*stackA);
+		swap_a(stackA);
 	if (command == sb)
-		swap_b(*stackB);
+		swap_b(stackB);
 	if (command == ss)
-		swap_swap_ab(*stackA, *stackB);
+		swap_swap_ab(stackA, stackB);
 	if (command == pa)
-		push_a(*stackA, *stackB);
+		push_a(stackA, stackB);
 	if (command == pb)
-		push_b(*stackA, *stackB);
+		push_b(stackA, stackB);
 	if (command == ra)
-		rotate_a(*stackA);
+		rotate_a(stackA);
 	if (command == rb)
-		rotate_b(*stackB);
+		rotate_b(stackB);
 	if (command == rr)
-		rotate_rotate_ab(*stackA, *stackB);
+		rotate_rotate_ab(stackA, stackB);
 	if (command == rra)
-		rev_rotate_a(*stackA);
+		rev_rotate_a(stackA);
 	if (command == rrb)
-		rev_rotate_b(*stackB);
+		rev_rotate_b(stackB);
 	if (command == rrr)
-		rev_rotate_rotate_ab(*stackA, *stackB);
+		rev_rotate_rotate_ab(stackA, stackB);
 }
