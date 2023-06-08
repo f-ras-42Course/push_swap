@@ -6,16 +6,24 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 00:46:16 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 13:45:51 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 16:00:27 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
+# define BUFFER_SIZE 4
+
 # include "push_swap.h"
 
-void	checker(t_data *start_input, size_t data_size);
+typedef struct s_stdin_commands
+{
+	t_cmd			command;
+	struct s_stdin_commands *next;
+}	s_stdin_commands;
+
+void	checker(t_data *data_input, size_t data_size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
