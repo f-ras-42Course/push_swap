@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/06/08 22:11:45 by fras          ########   odam.nl          #
+#    Updated: 2023/06/08 22:17:42 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ all: $(NAME)
 
 $(NAME): directories $(OBJECTS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(OBJECTS)
-	@echo created $@
+	@echo "\033[92m$@ is ready for usage!\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $^
