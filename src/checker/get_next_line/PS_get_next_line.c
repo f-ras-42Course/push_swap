@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 15:56:11 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/08 16:08:01 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*get_next_line(void)
 	newline_pos = find_newline(storage, len);
 	if (newline_pos)
 		return (extract_line(storage, leftover, newline_pos));
-	len = buffering(STDIN_FILENO, &storage, len);
+	len = buffering(&storage, len);
 	if (!storage)
 		return (NULL);
 	newline_pos = find_newline(storage, len);
@@ -53,7 +53,7 @@ size_t	retrieve_leftover(char **dest, char *leftover)
 	return (leftover_size);
 }
 
-size_t	buffering(int STDIN_FILENO, char **stored_read, size_t old_size)
+size_t	buffering(char **stored_read, size_t old_size)
 {
 	char	buffer[BUFFER_SIZE];
 	int		bytes_read;
