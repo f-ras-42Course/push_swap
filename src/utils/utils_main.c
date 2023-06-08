@@ -12,13 +12,6 @@
 
  #include "push_swap.h"
 
-
-void	error_exit(void)
-{
-	write(STDERR_FILENO, "Error\n", 7);
-	exit(EXIT_FAILURE);
-}
-
  size_t	circular_list_size(t_data *head)
  {
  	size_t	size;
