@@ -6,11 +6,12 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/06/08 22:17:42 by fras          ########   odam.nl          #
+#    Updated: 2023/06/09 12:06:47 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONUS = checker
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
 INCLUDE = -I include
@@ -20,11 +21,6 @@ SOURCES = $(shell find $(SRC_DIR) -type f -name "*.c")
 OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 
-
-ifdef BONUS
-NAME = checker
-endif
-
 ifdef DEBUG
 CFLAGS += -g
 endif
@@ -33,21 +29,26 @@ ifdef FSAN
 CFLAGS += -fsanitize=address -g
 endif
 
-
 # Targets
-.PHONY: all bonus clean fclean re directories debug rebug fsan resan
+.PHONY: all mandatory bonus clean fclean re directories debug rebug fsan resan
 
-all: $(NAME)
+all: $(NAME) $(BONUS)
 
-$(NAME): directories $(OBJECTS)
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(OBJECTS)
+	@echo "\033[92m$@ is ready for usage!\033[0m"
+
+$(BONUS): $(OBJECTS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(OBJECTS)
 	@echo "\033[92m$@ is ready for usage!\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(MAKE) directories
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $^
 
-bonus:
-	$(MAKE) BONUS=1
+mandatory: $(NAME)
+
+bonus: $(BONUS)
 
 # Directories
 directories:
