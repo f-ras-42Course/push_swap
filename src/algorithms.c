@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 23:55:16 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/09 14:26:53 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void	small_sort(t_data **stackA, size_t data_size, int lowest)
 	{
 		if ((*stackA)->normalized_value == lowest && second_value == lowest+2)
 		{
-			print_ops(rotate_a(stackA));
 			print_ops(swap_a(stackA));
-			print_ops(rev_rotate_a(stackA));
+			print_ops(rotate_a(stackA));
 		}
 		if ((*stackA)->normalized_value == lowest+1 && second_value == lowest)
 			print_ops(swap_a(stackA));
