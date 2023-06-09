@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/31 17:48:39 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/09 14:28:26 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,14 @@ void	swap(t_data **stack)
 	second = first->next;
 	third = second->next;
 	tail = first->prev;
-	first->prev = second;
-	first->next = third;
-	second->prev = tail;
-	second->next = first;
-	tail->next = second;
-	third->prev = first;
+	if (circular_list_size(*stack) > 2)
+	{
+		first->prev = second;
+		first->next = third;
+		second->prev = tail;
+		second->next = first;
+		tail->next = second;
+		third->prev = first;
+	}
 	*stack = second;
 }
