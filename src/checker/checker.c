@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 01:21:18 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 21:50:45 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/09 14:56:37 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	sort_from_stdin_commands(t_data **stackA, t_data **stackB)
 
 t_cmd	get_operations(char *str)
 {
+	if (!str)
+		return (none);
 	if (!ft_strncmp("sa\n", str, 4))
 		return(sa);
 	if (!ft_strncmp("sb\n", str, 4))
@@ -73,12 +75,12 @@ t_cmd	get_operations(char *str)
 		return(rrb);
 	if (!ft_strncmp("rrr\n", str, 5))
 		return(rrr);
-	return(none);
+	return(invalid);
 }
 
 void	make_operations(t_cmd command, t_data **stackA, t_data **stackB)
 {
-	if (command == none)
+	if (command == invalid)
 		error_exit();
 	if (command == sa)
 		swap_a(stackA);
