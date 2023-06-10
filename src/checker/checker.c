@@ -6,14 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 01:21:18 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/09 14:56:37 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:15:34 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-void test(t_data *data);
-#include <stdio.h>
 
 void	checker(t_data *data_input)
 {
@@ -22,26 +19,31 @@ void	checker(t_data *data_input)
 
 	stack_a = data_input;
 	stack_b = NULL;
-	printf("INITIAL DATA SETUP (STACK A):\n\n");
-	test(stack_a);
-	sort_from_stdin_commands(&stack_a, &stack_b);
-	printf("EOF reached\n");
+	sort_stack_from_stdin(&stack_a, &stack_b);
+	print_result(&stack_a, &stack_b);
 }
 
-void	sort_from_stdin_commands(t_data **stackA, t_data **stackB)
+void	print_result(t_data **stackA, t_data **stackB)
+{
+	int	check;
+
+	check = 0;
+	while ((*stackA)->normalized_value == check && ++check)
+		*stackA = (*stackA)->next;
+	if((*stackA)->normalized_value == 0 && !*stackB)
+		write(STDOUT_FILENO, "OK\n", 4);
+	else
+		write(STDOUT_FILENO, "KO\n", 4);
+}
+
+void	sort_stack_from_stdin(t_data **stackA, t_data **stackB)
 {
 	char *line;
 
-	printf("Time to start sorting...\n\n");
 	while (1)
 	{
 		line = get_next_line_stdin();
 		make_operations(get_operations(line), stackA, stackB);
-		printf("Used the following command: %s\n\n", line);
-		printf("Result StackA:\n");
-		test(*stackA);
-		printf("Result StackB:\n");
-		test(*stackB);
 		if(!line)
 			break;
 		free(line);
