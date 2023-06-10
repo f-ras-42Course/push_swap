@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PS_get_next_line.h                                 :+:    :+:            */
+/*   ps_get_next_line.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:46:02 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 20:11:03 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:24:58 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PS_GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-# 	define BUFFER_SIZE 128
+#  define BUFFER_SIZE 128
 # endif
 
 # include <stdlib.h>

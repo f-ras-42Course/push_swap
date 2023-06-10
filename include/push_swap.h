@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/09 14:53:34 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:40:56 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_data
 	struct s_data	*next;
 }	t_data;
 
- typedef enum e_command {none, sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr,\
- 	invalid}	t_cmd;
+typedef enum e_command {none, sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr,\
+	invalid}	t_cmd;
 
 void	validate_formatting(char *argv[]);
 void	validate_no_duplicate_num(t_data *data);
@@ -37,7 +37,7 @@ t_data	*collect_data(char *argv[]);
 t_data	*new_data_list(int input);
 t_data	*add_data_node(t_data *prev, int input, t_data *next);
 t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head);
- size_t	circular_list_size(t_data *head);
+size_t	circular_list_size(t_data *head);
 void	insert_normalized_values(t_data *head, size_t size);
 int		get_lowest_value(t_data *head);
 void	insert_lowest_norm_value(int lowest_value, int insertion, t_data *head);
@@ -60,10 +60,10 @@ void	add_head_to_stack(t_data **stack, t_data **head);
 t_cmd	print_ops(t_cmd operation);
 void	small_sort(t_data **stackA, size_t data_size, int lowest);
 void	ferry_sort(t_data **stackA, t_data **stackB, size_t data_size);
-void	redix_sort (t_data **stackA, t_data **stackB, size_t data_size);
+void	redix_sort(t_data **stackA, t_data **stackB, size_t data_size);
 int		locate_low_normal_or_rev(t_data **stackA, int num);
 int		get_highest_bit_length(t_data *stackA);
-void	push_all_to_stackA(t_data **stackA, t_data **stackB);
+void	push_all_to_stack_a(t_data **stackA, t_data **stackB);
 bool	fr_isdigit(int c);
 long	fr_atol(const char *str);
 void	error_exit(void);

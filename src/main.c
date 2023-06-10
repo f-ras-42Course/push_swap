@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/09 14:57:01 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:45:06 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 	size_t	data_size;
 
 	if (argc == 1)
-		return(0);
+		return (0);
 	validate_formatting(argv);
 	data = collect_data(argv);
 	validate_no_duplicate_num(data);

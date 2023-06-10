@@ -6,18 +6,18 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/06 15:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/07 23:19:42 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:43:51 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_all_to_stackA(t_data **stackA, t_data **stackB)
+void	push_all_to_stack_a(t_data **stackA, t_data **stackB)
 {
-	t_cmd command;
+	t_cmd	command;
 
 	command = print_ops(push_a(stackA, stackB));
-	while(command != none)
+	while (command != none)
 		command = print_ops(push_a(stackA, stackB));
 }
 
@@ -49,7 +49,7 @@ int	locate_low_normal_or_rev(t_data **stackA, int num)
 	t_data	*ptr;
 	int		next_check;
 	int		prev_check;
-	
+
 	next_check = 0;
 	prev_check = 0;
 	ptr = *stackA;

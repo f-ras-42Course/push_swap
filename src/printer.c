@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/27 19:05:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 13:42:58 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:44:20 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ t_cmd	print_ops(t_cmd operation)
 		write(STDOUT_FILENO, "rrb\n", 4);
 	if (operation == rrr)
 		write(STDOUT_FILENO, "rrr\n", 4);
-	return(operation);
+	return (operation);
 }

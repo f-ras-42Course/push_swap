@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 01:21:18 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/10 13:15:34 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/10 13:28:59 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	checker(t_data *data_input)
 {
-	t_data *stack_a;
-	t_data *stack_b;
+	t_data	*stack_a;
+	t_data	*stack_b;
 
 	stack_a = data_input;
 	stack_b = NULL;
@@ -30,7 +30,7 @@ void	print_result(t_data **stackA, t_data **stackB)
 	check = 0;
 	while ((*stackA)->normalized_value == check && ++check)
 		*stackA = (*stackA)->next;
-	if((*stackA)->normalized_value == 0 && !*stackB)
+	if ((*stackA)->normalized_value == 0 && !*stackB)
 		write(STDOUT_FILENO, "OK\n", 4);
 	else
 		write(STDOUT_FILENO, "KO\n", 4);
@@ -38,14 +38,14 @@ void	print_result(t_data **stackA, t_data **stackB)
 
 void	sort_stack_from_stdin(t_data **stackA, t_data **stackB)
 {
-	char *line;
+	char	*line;
 
 	while (1)
 	{
 		line = get_next_line_stdin();
 		make_operations(get_operations(line), stackA, stackB);
-		if(!line)
-			break;
+		if (!line)
+			break ;
 		free(line);
 	}
 	free(line);
@@ -56,28 +56,28 @@ t_cmd	get_operations(char *str)
 	if (!str)
 		return (none);
 	if (!ft_strncmp("sa\n", str, 4))
-		return(sa);
+		return (sa);
 	if (!ft_strncmp("sb\n", str, 4))
-		return(sb);
+		return (sb);
 	if (!ft_strncmp("ss\n", str, 4))
-		return(ss);
+		return (ss);
 	if (!ft_strncmp("pa\n", str, 4))
-		return(pa);
+		return (pa);
 	if (!ft_strncmp("pb\n", str, 4))
-		return(pb);
+		return (pb);
 	if (!ft_strncmp("ra\n", str, 4))
-		return(ra);
+		return (ra);
 	if (!ft_strncmp("rb\n", str, 4))
-		return(rb);
+		return (rb);
 	if (!ft_strncmp("rr\n", str, 4))
-		return(rr);
+		return (rr);
 	if (!ft_strncmp("rra\n", str, 5))
-		return(rra);
+		return (rra);
 	if (!ft_strncmp("rrb\n", str, 5))
-		return(rrb);
+		return (rrb);
 	if (!ft_strncmp("rrr\n", str, 5))
-		return(rrr);
-	return(invalid);
+		return (rrr);
+	return (invalid);
 }
 
 void	make_operations(t_cmd command, t_data **stackA, t_data **stackB)
