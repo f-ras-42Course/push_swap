@@ -6,12 +6,14 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/10 13:40:56 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/11 18:48:06 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define TOTAL_DIGITS_MAX_INT 10
 
 # include <unistd.h>
 # include <stdlib.h>

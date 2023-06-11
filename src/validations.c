@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 15:53:58 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/11 18:48:50 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	validate_formatting(char *argv[])
 		while (argv[i][j])
 		{
 			digit_count += fr_isdigit(argv[i][j]);
-			if (digit_count > 10)
+			if (digit_count > TOTAL_DIGITS_MAX_INT)
 				error_exit();
 			if (!is_valid_num_format(argv[i], j))
 				error_exit();

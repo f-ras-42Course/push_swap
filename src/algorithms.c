@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/10 13:46:13 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/11 18:47:24 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ferry_sort(t_data **stackA, t_data **stackB, size_t data_size)
 		lowest_num++;
 	}
 	small_sort(stackA, 3, lowest_num);
-	push_all_to_stackA(stackA, stackB);
+	push_all_to_stack_a(stackA, stackB);
 }
 
 void	redix_sort(t_data **stackA, t_data **stackB, size_t data_size)
@@ -79,7 +79,7 @@ void	redix_sort(t_data **stackA, t_data **stackB, size_t data_size)
 		if (i == data_size)
 		{
 			bit_check *= 2;
-			push_all_to_stackA(stackA, stackB);
+			push_all_to_stack_a(stackA, stackB);
 			i = 0;
 			bit_length--;
 		}
