@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 18:11:48 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/12 21:41:33 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_data	*new_data_list(int input)
 
 	new = malloc(sizeof(t_data));
 	if (!new)
-		malloc_failure_exit();
+		malloc_failure_exit(new);
 	new->prev = NULL;
 	new->input_value = input;
 	new->normalized_value = -1;
@@ -69,7 +69,7 @@ t_data	*add_data_node(t_data *prev, int input, t_data *next)
 
 	node = malloc(sizeof(t_data));
 	if (!node)
-		malloc_failure_exit();
+		malloc_failure_exit(node);
 	prev->next = node;
 	node->prev = prev;
 	node->input_value = input;

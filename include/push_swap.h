@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/11 18:48:06 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/12 21:49:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	push_all_to_stack_a(t_data **stackA, t_data **stackB);
 bool	fr_isdigit(int c);
 long	fr_atol(const char *str);
 void	error_exit(void);
-void	malloc_failure_exit(void);
+void	malloc_failure_exit(t_data *data);
+void	freeing_data(t_data *data);
 
 #endif
