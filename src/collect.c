@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/12 21:41:33 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/13 15:24:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_data	*new_data_list(int input)
 	return (new);
 }
 
-t_data	*add_data_node(t_data *prev, int input, t_data *next)
+t_data	*add_data_node(t_data *prev, int input, t_data *head)
 {
 	t_data	*node;
 
@@ -74,6 +74,6 @@ t_data	*add_data_node(t_data *prev, int input, t_data *next)
 	node->prev = prev;
 	node->input_value = input;
 	node->normalized_value = -1;
-	node->next = next;
+	node->next = head;
 	return (node);
 }

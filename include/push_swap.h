@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/12 21:49:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/13 15:24:02 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		int_only(long input);
 bool	is_valid_num_format(char *ptr, int i);
 t_data	*collect_data(char *argv[]);
 t_data	*new_data_list(int input);
-t_data	*add_data_node(t_data *prev, int input, t_data *next);
+t_data	*add_data_node(t_data *prev, int input, t_data *head);
 t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head);
 size_t	circular_list_size(t_data *head);
 void	insert_normalized_values(t_data *head, size_t size);
