@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/13 15:24:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/13 17:23:20 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ t_data	*collect_data(char *argv[])
 	int		i;
 
 	i = 1;
-	head = new_data_list(int_only(fr_atol(argv[i])));
+	head = NULL;
+	head = new_data_list(int_only(fr_atol(argv[i]), head));
 	ptr = head;
 	while (argv[i])
 	{
 		if (i != 1)
-			ptr = add_data_node(ptr, int_only(fr_atol(argv[i])), head);
+			ptr = add_data_node(ptr, int_only(fr_atol(argv[i]), head), head);
 		ptr = split_nums_from_strings(ptr, argv[i], head);
 		i++;
 	}
@@ -42,7 +43,7 @@ t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head)
 		if (str[i] == ' ')
 		{
 			i++;
-			ptr = add_data_node(ptr, int_only(fr_atol(str + i)), head);
+			ptr = add_data_node(ptr, int_only(fr_atol(str + i), head), head);
 		}
 		i++;
 	}
@@ -69,7 +70,7 @@ t_data	*add_data_node(t_data *prev, int input, t_data *head)
 
 	node = malloc(sizeof(t_data));
 	if (!node)
-		malloc_failure_exit(node);
+		malloc_failure_exit(head);
 	prev->next = node;
 	node->prev = prev;
 	node->input_value = input;

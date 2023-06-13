@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/13 15:24:02 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/13 15:25:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef enum e_command {none, sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr,\
 
 void	validate_formatting(char *argv[]);
 void	validate_no_duplicate_num(t_data *data);
-int		int_only(long input);
+int		int_only(long input, t_data *data);
 bool	is_valid_num_format(char *ptr, int i);
 t_data	*collect_data(char *argv[]);
 t_data	*new_data_list(int input);

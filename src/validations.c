@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/11 18:48:50 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/12 22:42:55 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,13 @@ bool	is_valid_num_format(char *ptr, int i)
 		|| ((ptr[i] == '-') && (ptr[i - 1] == ' ') && ptr[i + 1]));
 }
 
-int	int_only(long input)
+int	int_only(long input, t_data *data)
 {
 	if (input > INT_MAX || input < INT_MIN)
+	{
+		freeing_data(data);
 		error_exit();
+	}
 	return ((int) input);
 }
 
@@ -69,7 +72,10 @@ void	validate_no_duplicate_num(t_data *head)
 		while (ptr != head)
 		{
 			if (check_value == ptr->input_value)
+			{
+				freeing_data(head);
 				error_exit();
+			}
 			ptr = ptr->next;
 		}
 		check_value = pos->input_value;

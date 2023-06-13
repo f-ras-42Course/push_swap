@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/06/09 12:06:47 by fras          ########   odam.nl          #
+#    Updated: 2023/06/13 16:10:44 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,3 +74,13 @@ fsan:
 	$(MAKE) FSAN=1
 
 resan: fclean fsan
+
+# Leaks
+
+leakscheck: $(NAME)
+	leaks --atExit -- ./$< "3 2 1"
+
+leaksinfo: $(NAME)
+	export MallocStackLogging=1 && \
+	./$< && \
+	leaks -atExit -quiet -list -- ./$< "3 2 1"
