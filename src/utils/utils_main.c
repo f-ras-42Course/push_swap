@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 04:07:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/12 22:21:06 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/14 19:33:29 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,12 @@ void	freeing_data(t_data *data)
 	t_data *head;
 	t_data *next;
 
+	next = NULL;
 	head = data;
-	while (data)
+	while (data && next != head)
 	{
 		next = data->next;
-		if (next == head)
-			return ;
 		free(data);
-		data=next;
+		data = next;
 	}
 }
