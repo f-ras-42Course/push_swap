@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/06 15:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/10 13:43:51 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 17:24:27 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	get_highest_bit_length(t_data *stack)
 	return (bit_length);
 }
 
-int	locate_low_normal_or_rev(t_data **stackA, int num)
+int	locate_low_top_or_bottom(t_data **stackA, int num)
 {
 	t_data	*ptr;
 	int		next_check;
