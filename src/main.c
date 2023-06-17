@@ -6,13 +6,12 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 12:13:25 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 13:03:14 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "checker.h"
-#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
