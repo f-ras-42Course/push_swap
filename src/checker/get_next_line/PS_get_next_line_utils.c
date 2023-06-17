@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:41 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 20:07:41 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 12:30:46 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,18 @@ char	*save_string_realloc(char *source, char *dest, size_t size)
 	i = 0;
 	backup = malloc((size + 1) * sizeof(char));
 	if (!backup)
+	{
+		free(dest);
 		malloc_failure_exit();
+	}
 	sizeof_stringcopy(backup, dest);
 	free(dest);
 	dest = malloc((size + 1) * sizeof(char));
 	if (!dest)
+	{
+		free(backup);
 		malloc_failure_exit();
+	}
 	prev_size = sizeof_stringcopy(dest, backup);
 	free(backup);
 	while (prev_size < size)

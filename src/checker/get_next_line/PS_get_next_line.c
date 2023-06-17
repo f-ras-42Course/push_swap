@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 18:45:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 21:49:59 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 12:33:05 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ size_t	buffering(char **stored_read, size_t old_size)
 			bytes_read = read(STDIN_FILENO, buffer, BUFFER_SIZE);
 	}
 	if (bytes_read == -1)
+	{
+		free(*stored_read);
 		read_failure_exit();
+	}
 	return (size);
 }
 
