@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/12 21:51:52 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 12:08:31 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,4 @@ void	push_swap(t_data *start_input, size_t data_size)
 		ferry_sort (&stack_a, &stack_b, data_size);
 	else
 		redix_sort(&stack_a, &stack_b, data_size);
-	freeing_data(stack_a);
-	freeing_data(stack_b);
 }
