@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:20:13 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 13:03:14 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 13:11:28 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 	validate_formatting(argv);
 	data = collect_data(argv);
 	validate_no_duplicate_num(data);
-	data_size = circular_list_size(data);	
+	data_size = circular_list_size(data);
 	insert_normalized_values(data, data_size);
 	if (!ft_strncmp("./checker", argv[0], 10))
 		checker(data);
