@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:10:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 12:08:31 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 17:33:28 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	push_swap(t_data *start_input, size_t data_size)
 
 	stack_a = start_input;
 	stack_b = NULL;
+	if (is_sorted(stack_a, data_size))
+		return ;
 	if (data_size <= 3)
 		small_sort(&stack_a, data_size, 0);
 	else if (data_size <= 73)

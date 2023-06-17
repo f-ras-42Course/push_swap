@@ -6,11 +6,29 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 17:24:25 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 17:36:49 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+#include <stdio.h>
+
+bool	is_sorted(t_data *stackA, size_t data_size)
+{
+	int		check;
+
+	check = 0;
+	while (data_size)
+	{
+		if (check != stackA->normalized_value)
+			return(false);
+		check++;
+		data_size--;
+		stackA = stackA->next;
+	}
+	return (true);
+}
 
 void	small_sort(t_data **stackA, size_t data_size, int lowest)
 {
