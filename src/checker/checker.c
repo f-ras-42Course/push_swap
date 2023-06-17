@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 01:21:18 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/10 13:28:59 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 20:25:33 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_cmd	get_operations(char *str)
 void	make_operations(t_cmd command, t_data **stackA, t_data **stackB)
 {
 	if (command == invalid)
-		error_exit();
+		error_exit_invalid_operation(stackA, stackB);
 	if (command == sa)
 		swap_a(stackA);
 	if (command == sb)

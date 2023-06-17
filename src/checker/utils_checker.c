@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/08 01:06:29 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/08 01:15:46 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/17 20:27:10 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	chr1 = (unsigned char)s1[i];
 	chr2 = (unsigned char)s2[i];
 	return (chr1 - chr2);
+}
+
+void	error_exit_invalid_operation(t_data **stackA, t_data **stackB)
+{
+	free(stackA);
+	free(stackB);
+	write(STDERR_FILENO, "Error\n", 7);
+	exit(EXIT_FAILURE);
 }
