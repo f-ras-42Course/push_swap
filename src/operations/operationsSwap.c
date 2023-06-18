@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 10:14:58 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 12:58:17 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/18 18:55:46 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ t_cmd	swap_b(t_data **stackB)
 
 t_cmd	swap_swap_ab(t_data **stackA, t_data **stackB)
 {
-	if ((!*stackB || (*stackB)->next == *stackB)
-		&& (!*stackA || (*stackA)->next == *stackA))
-		return (none);
-	swap(stackA);
-	swap(stackB);
+	swap_a(stackA);
+	swap_b(stackB);
 	return (ss);
 }
 
