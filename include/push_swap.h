@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 17:32:59 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/18 18:59:10 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_cmd	print_ops(t_cmd operation);
 bool	is_sorted(t_data *stackA, size_t data_size);
 void	small_sort(t_data **stackA, size_t data_size, int lowest);
 void	ferry_sort(t_data **stackA, t_data **stackB, size_t data_size);
-void	redix_sort(t_data **stackA, t_data **stackB, size_t data_size);
+void	radix_sort(t_data **stackA, t_data **stackB, size_t data_size);
 int		locate_low_top_or_bottom(t_data **stackA, int num);
 int		get_highest_bit_length(t_data *stackA);
 void	push_all_to_stack_a(t_data **stackA, t_data **stackB);
