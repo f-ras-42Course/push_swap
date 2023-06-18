@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/18 18:57:40 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/18 18:58:24 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	validate_formatting(char *argv[])
 	{
 		j = 0;
 		digit_count = 0;
-		if (!argv[i])
+		if (!argv[i][j])
 			error_exit();
 		while (argv[i][j])
 		{
