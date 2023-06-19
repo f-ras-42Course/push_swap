@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/29 18:26:53 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/18 19:00:44 by fras          ########   odam.nl         */
+/*   Updated: 2023/06/19 08:11:43 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	radix_sort(t_data **stackA, t_data **stackB, size_t data_size)
 		i++;
 		if (i == data_size)
 		{
-			bit_check *= 2;
+			bit_check = bit_check << 1;
 			push_all_to_stack_a(stackA, stackB);
 			i = 0;
 			bit_length--;
