@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 04:07:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/17 13:18:36 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/05 21:22:00 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ size_t	circular_list_size(t_data *head)
 	return (++size);
 }
 
-bool	fr_isdigit(int c)
+bool	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
 
-long	fr_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	long	rtn;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/27 02:13:37 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/13 17:23:20 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/05 21:21:04 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ t_data	*collect_data(char *argv[])
 
 	i = 1;
 	head = NULL;
-	head = new_data_list(int_only(fr_atol(argv[i]), head));
+	head = new_data_list(int_only(ft_atol(argv[i]), head));
 	ptr = head;
 	while (argv[i])
 	{
 		if (i != 1)
-			ptr = add_data_node(ptr, int_only(fr_atol(argv[i]), head), head);
+			ptr = add_data_node(ptr, int_only(ft_atol(argv[i]), head), head);
 		ptr = split_nums_from_strings(ptr, argv[i], head);
 		i++;
 	}
@@ -43,7 +43,7 @@ t_data	*split_nums_from_strings(t_data *ptr, char *str, t_data *head)
 		if (str[i] == ' ')
 		{
 			i++;
-			ptr = add_data_node(ptr, int_only(fr_atol(str + i), head), head);
+			ptr = add_data_node(ptr, int_only(ft_atol(str + i), head), head);
 		}
 		i++;
 	}

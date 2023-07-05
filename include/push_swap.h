@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:53:14 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/18 18:59:10 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/05 21:20:44 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	radix_sort(t_data **stackA, t_data **stackB, size_t data_size);
 int		locate_low_top_or_bottom(t_data **stackA, int num);
 int		get_highest_bit_length(t_data *stackA);
 void	push_all_to_stack_a(t_data **stackA, t_data **stackB);
-bool	fr_isdigit(int c);
-long	fr_atol(const char *str);
+bool	ft_isdigit(int c);
+long	ft_atol(const char *str);
 void	error_exit(void);
 void	malloc_failure_exit(t_data *data);
 void	freeing_data(t_data *data);

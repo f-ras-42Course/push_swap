@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/26 21:50:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/06/18 18:58:24 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/05 21:21:36 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	validate_formatting(char *argv[])
 			error_exit();
 		while (argv[i][j])
 		{
-			digit_count += fr_isdigit(argv[i][j]);
+			digit_count += ft_isdigit(argv[i][j]);
 			if (digit_count > TOTAL_DIGITS_MAX_INT)
 				error_exit();
 			if (!is_valid_num_format(argv[i], j))
@@ -43,9 +43,9 @@ void	validate_formatting(char *argv[])
 bool	is_valid_num_format(char *ptr, int i)
 {
 	if (i == 0)
-		return (fr_isdigit(ptr[i]) || ((ptr[i] == '-') && ptr[i + 1]));
-	return (fr_isdigit(ptr[i]) \
-		|| ((ptr[i] == ' ') && fr_isdigit(ptr[i - 1]) && ptr[i + 1]) \
+		return (ft_isdigit(ptr[i]) || ((ptr[i] == '-') && ptr[i + 1]));
+	return (ft_isdigit(ptr[i]) \
+		|| ((ptr[i] == ' ') && ft_isdigit(ptr[i - 1]) && ptr[i + 1]) \
 		|| ((ptr[i] == '-') && (ptr[i - 1] == ' ') && ptr[i + 1]));
 }
 
